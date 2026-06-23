@@ -34,10 +34,9 @@ export function Header({ profile }: HeaderProps) {
             <span>{profile.chineseName}</span>
           </h1>
           <p className="title-line">{profile.title}</p>
+          <p className="intro">{profile.intro}</p>
         </div>
       </div>
-
-      <p className="intro">{profile.intro}</p>
     </header>
   )
 }
