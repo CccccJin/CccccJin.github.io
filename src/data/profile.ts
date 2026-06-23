@@ -17,8 +17,6 @@ export const profile = {
     'My engineering work spans ROS/MoveIt robot control, computer vision model validation, React/TypeScript dashboards, FastAPI data services, chemical similarity search, and hardware/software troubleshooting in semiconductor and FPD equipment environments.',
     'I am interested in robotics, embodied AI, computer vision, and practical AI systems that work outside ideal demos, where perception, motion, interfaces, data pipelines, and deployment constraints have to fit together.',
   ],
-  contactIntro:
-    'I am open to robotics, AI engineering, computer vision, and software engineering opportunities.',
   links: [
     {
       label: 'Email',
@@ -49,15 +47,6 @@ export const education = {
       details: [
         'Research focus: emotion-aware human-robot collaboration with UR5e, robot speed and distance adaptation, controlled experiments, user workload/perception evaluation, and statistical analysis.',
         'Relevant coursework: Human-Robot Interaction, Robotics and Society, Multivariable Control Systems, Advanced Control.',
-      ],
-    },
-    {
-      degree: 'Bachelor of Mechatronics Engineering',
-      institution: 'Beijing Institute of Technology',
-      location: 'China',
-      period: 'Sep 2015 - May 2019',
-      details: [
-        'Coursework included mechanical design, C programming, analog/digital electronics, control engineering, embedded systems, and machine vision.',
       ],
     },
   ],
