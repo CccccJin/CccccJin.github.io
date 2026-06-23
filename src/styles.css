@@ -64,7 +64,7 @@ li + li {
 }
 
 .page-shell {
-  width: min(100% - 32px, 1180px);
+  width: min(100% - 32px, 944px);
   margin: 0 auto;
   padding: 42px 0 30px;
 }
@@ -165,7 +165,7 @@ h3 {
 }
 
 .intro {
-  margin: 28px 0 0 calc(var(--section-label) + var(--section-gap));
+  margin: 28px 0 0;
   color: #242424;
   text-align: justify;
 }
@@ -279,7 +279,7 @@ h3 {
   }
 
   .page-shell {
-    width: min(100% - 26px, 1180px);
+    width: min(100% - 26px, 944px);
     padding-top: 26px;
   }
 
