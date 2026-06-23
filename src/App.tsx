@@ -65,10 +65,7 @@ function App() {
         <Section id="education" title="Education">
           <div className="education-list">
             {education.entries.map((item) => (
-              <article
-                className="education-item"
-                key={`${item.degree}-${item.institution}`}
-              >
+              <article className="education-item" key={`${item.degree}-${item.institution}`}>
                 <div className="education-heading">
                   <div>
                     <h3>{item.degree}</h3>

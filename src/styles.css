@@ -68,7 +68,7 @@ li + li {
 }
 
 .page-shell {
-  width: min(100% - 36px, 944px);
+  width: min(100% - 36px, 960px);
   margin: 0 auto;
   padding: 38px 0 30px;
 }
@@ -357,7 +357,7 @@ h3 {
   }
 
   .page-shell {
-    width: min(100% - 26px, 944px);
+    width: min(100% - 26px, 960px);
     padding-top: 26px;
   }
 
