@@ -4,6 +4,8 @@ type HeaderProps = {
   profile: {
     name: string
     chineseName: string
+    avatarSrc: string
+    avatarAlt: string
     title: string
     intro: string
     links: ProfileLink[]
@@ -14,9 +16,7 @@ export function Header({ profile }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="identity">
-        <div className="avatar-placeholder" aria-label="Portrait placeholder">
-          <span>CH</span>
-        </div>
+        <img className="avatar" src={profile.avatarSrc} alt={profile.avatarAlt} />
 
         <div className="identity-copy">
           <p className="kicker">Robotics / AI / Engineering</p>

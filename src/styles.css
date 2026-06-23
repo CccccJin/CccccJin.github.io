@@ -77,16 +77,13 @@ li + li {
   align-items: start;
 }
 
-.avatar-placeholder {
+.avatar {
   width: 112px;
   aspect-ratio: 1;
-  display: grid;
-  place-items: center;
   border: 1px solid #cfcfcf;
-  background: var(--soft);
-  color: #2b2b2b;
-  font-size: 1.55rem;
-  font-weight: 650;
+  display: block;
+  object-fit: cover;
+  object-position: center 42%;
 }
 
 .kicker {
@@ -253,9 +250,8 @@ h3 {
     gap: 16px;
   }
 
-  .avatar-placeholder {
+  .avatar {
     width: 78px;
-    font-size: 1.1rem;
   }
 
   h1 span {
@@ -289,7 +285,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .avatar-placeholder {
+  .avatar {
     width: 86px;
   }
 }
