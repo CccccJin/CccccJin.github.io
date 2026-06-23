@@ -15,8 +15,9 @@
   --light-muted: #707070;
   --border: #dddddd;
   --soft: #f6f7f8;
+  --soft-blue: #f4f8ff;
   --media-col: 224px;
-  --header-gap: 52px;
+  --header-gap: 44px;
   --section-label: 170px;
   --section-gap: 28px;
   --academic-serif: 'Times New Roman', Times, serif;
@@ -38,12 +39,14 @@ body {
 
 a {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.15em;
 }
 
 a:hover,
 a:focus-visible {
-  text-decoration: underline;
+  color: #002f7d;
 }
 
 a:focus-visible {
@@ -65,14 +68,14 @@ li + li {
 }
 
 .page-shell {
-  width: min(100% - 32px, 944px);
+  width: min(100% - 36px, 944px);
   margin: 0 auto;
-  padding: 42px 0 30px;
+  padding: 38px 0 30px;
 }
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 28px;
+  padding-bottom: 26px;
 }
 
 .identity {
@@ -110,7 +113,7 @@ li + li {
 .kicker {
   color: var(--light-muted);
   font-size: 0.88rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 h1,
@@ -125,7 +128,7 @@ h3 {
 
 h1 {
   font-family: var(--academic-serif);
-  font-size: clamp(2rem, 6vw, 3.15rem);
+  font-size: clamp(2.1rem, 5.4vw, 3.05rem);
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
@@ -150,7 +153,7 @@ h3 {
 
 .title-line {
   color: #333333;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.7rem;
 }
 
 .inline-links,
@@ -158,7 +161,7 @@ h3 {
 .profile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15rem 0.75rem;
+  gap: 0.15rem 0.85rem;
   align-items: center;
 }
 
@@ -170,9 +173,9 @@ h3 {
 
 .intro {
   font-family: var(--academic-serif);
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   line-height: 1.5;
-  margin: 1rem 0 0;
+  margin: 0.85rem 0 0;
   color: #242424;
   text-align: justify;
 }
@@ -181,8 +184,12 @@ h3 {
   display: grid;
   grid-template-columns: var(--section-label) minmax(0, 1fr);
   gap: var(--section-gap);
-  padding: 25px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--border);
+}
+
+.section h2 {
+  color: #222222;
 }
 
 .section-content {
@@ -203,7 +210,8 @@ h3 {
 
 .project-list,
 .experience-list,
-.skill-grid {
+.skill-grid,
+.education-list {
   display: grid;
   gap: 16px;
 }
@@ -227,6 +235,14 @@ h3 {
   margin-bottom: 0.25rem;
 }
 
+.project-focus {
+  color: #333333;
+  background: var(--soft-blue);
+  border-left: 3px solid rgba(6, 69, 173, 0.35);
+  margin: 0.62rem 0 0.3rem;
+  padding: 0.42rem 0.6rem;
+}
+
 .tech-stack {
   color: var(--muted);
   font-size: 0.98rem;
@@ -243,7 +259,8 @@ h3 {
   padding-bottom: 15px;
 }
 
-.experience-heading {
+.experience-heading,
+.education-heading {
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -251,13 +268,20 @@ h3 {
 }
 
 .experience-heading p,
-.experience-heading span {
+.experience-heading span,
+.education-heading p,
+.education-heading span {
   color: var(--muted);
   font-size: 0.94rem;
 }
 
-.experience-heading span {
+.experience-heading > span,
+.education-heading > span {
   white-space: nowrap;
+}
+
+.experience-heading p span {
+  color: var(--light-muted);
 }
 
 .skill-grid {
@@ -270,9 +294,23 @@ h3 {
   color: #2f2f2f;
 }
 
+.education-item {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 15px;
+}
+
+.education-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
 .institution {
   color: var(--muted);
   margin: 0.1rem 0 0.35rem;
+}
+
+.contact-links {
+  margin-top: 0.55rem;
 }
 
 .site-footer {
@@ -309,11 +347,13 @@ h3 {
     padding: 22px 0;
   }
 
-  .experience-heading {
+  .experience-heading,
+  .education-heading {
     display: block;
   }
 
-  .experience-heading span {
+  .experience-heading > span,
+  .education-heading > span {
     display: block;
     margin-top: 0.1rem;
   }

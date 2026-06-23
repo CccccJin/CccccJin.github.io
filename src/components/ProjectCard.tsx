@@ -12,6 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p>{project.description}</p>
       </div>
 
+      <p className="project-focus">{project.focus}</p>
       <p className="tech-stack">{project.tech.join(' / ')}</p>
 
       <nav className="compact-links" aria-label={`${project.title} links`}>

@@ -9,16 +9,16 @@ export const profile = {
   avatarSrc: './avatar.jpg?v=20260623-1848',
   avatarAlt: 'Portrait of Changjin He',
   title:
-    'Mechatronics Engineer | Robotics & AI | Computer Vision | Full-stack Prototyping',
+    'Mechatronics Engineer | Robotics & Embodied AI | Computer Vision | Full-stack Prototyping',
   intro:
-    'I am a Master of Mechatronics Engineering graduate from the University of Auckland, interested in robotics, embodied AI, computer vision, and practical AI systems. My work spans human-robot collaboration, robot learning prototypes, computer vision systems, and full-stack engineering.',
+    'I build practical robotics, computer vision, and AI/software prototypes that connect sensing, control, data, and deployment. My background combines mechatronics research, full-stack engineering, computer vision validation, and field diagnostics for complex industrial equipment.',
   about: [
-    'I hold a Master of Mechatronics Engineering from the University of Auckland, with interests across robotics, embodied AI, vision-language-action systems, imitation learning, computer vision, and human-robot collaboration.',
-    'My background combines practical engineering experience with software development, data systems, and robotics prototyping. I have worked across field service engineering, dashboard and API development, model evaluation workflows, and hands-on robot learning experiments.',
-    'I am focused on building reliable robotic and AI systems that can operate under real-world constraints, where sensing, software, hardware, users, and deployment conditions all matter.',
+    'I completed a Master of Mechatronics Engineering (Research) at the University of Auckland, focused on human-robot collaboration, UR5e control, robot speed and distance adaptation, and experimental evaluation of user experience.',
+    'My engineering work spans ROS/MoveIt robot control, computer vision model validation, React/TypeScript dashboards, FastAPI data services, chemical similarity search, and hardware/software troubleshooting in semiconductor and FPD equipment environments.',
+    'I am interested in robotics, embodied AI, computer vision, and practical AI systems that work outside ideal demos, where perception, motion, interfaces, data pipelines, and deployment constraints have to fit together.',
   ],
   contactIntro:
-    'I am open to opportunities in robotics, AI engineering, computer vision, and software engineering.',
+    'I am open to robotics, AI engineering, computer vision, and software engineering opportunities.',
   links: [
     {
       label: 'Email',
@@ -40,10 +40,25 @@ export const profile = {
 }
 
 export const education = {
-  degree: 'Master of Mechatronics Engineering',
-  institution: 'University of Auckland',
-  focus:
-    'Research focus: Human-Robot Collaboration, UR5e, robot speed/proximity/task pacing, user study design, and statistical analysis.',
-  additionalNote:
-    'Additional engineering and mechatronics-related background can be added here when exact school and dates are ready.',
+  entries: [
+    {
+      degree: 'Master of Mechatronics Engineering (Research)',
+      institution: 'University of Auckland',
+      location: 'Auckland, New Zealand',
+      period: 'Jul 2024 - Feb 2026',
+      details: [
+        'Research focus: emotion-aware human-robot collaboration with UR5e, robot speed and distance adaptation, controlled experiments, user workload/perception evaluation, and statistical analysis.',
+        'Relevant coursework: Human-Robot Interaction, Robotics and Society, Multivariable Control Systems, Advanced Control.',
+      ],
+    },
+    {
+      degree: 'Bachelor of Mechatronics Engineering',
+      institution: 'Beijing Institute of Technology',
+      location: 'China',
+      period: 'Sep 2015 - May 2019',
+      details: [
+        'Coursework included mechanical design, C programming, analog/digital electronics, control engineering, embedded systems, and machine vision.',
+      ],
+    },
+  ],
 }

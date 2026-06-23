@@ -51,14 +51,39 @@ function App() {
         </Section>
 
         <Section id="education" title="Education">
-          <div className="education-item">
-            <h3>{education.degree}</h3>
-            <p className="institution">{education.institution}</p>
-            <p>{education.focus}</p>
-            {education.additionalNote && <p>{education.additionalNote}</p>}
+          <div className="education-list">
+            {education.entries.map((item) => (
+              <article
+                className="education-item"
+                key={`${item.degree}-${item.institution}`}
+              >
+                <div className="education-heading">
+                  <div>
+                    <h3>{item.degree}</h3>
+                    <p className="institution">
+                      {item.institution} · {item.location}
+                    </p>
+                  </div>
+                  <span>{item.period}</span>
+                </div>
+                {item.details.map((detail) => (
+                  <p key={detail}>{detail}</p>
+                ))}
+              </article>
+            ))}
           </div>
         </Section>
 
+        <Section id="contact" title="Contact">
+          <p>{profile.contactIntro}</p>
+          <nav className="inline-links contact-links" aria-label="Contact links">
+            {profile.links.map((link) => (
+              <a key={link.label} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </Section>
       </main>
 
       <Footer name={profile.name} />

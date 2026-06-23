@@ -10,7 +10,10 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
       <div className="experience-heading">
         <div>
           <h3>{experience.company}</h3>
-          <p>{experience.role}</p>
+          <p>
+            {experience.role}
+            {experience.location && <span> · {experience.location}</span>}
+          </p>
         </div>
         <span>{experience.period}</span>
       </div>

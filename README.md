@@ -1,6 +1,6 @@
 # CccccJin.github.io
 
-A static personal website for Changjin He, focused on robotics, AI, computer vision, software engineering, and practical mechatronics experience. The site is built as a lightweight single-page React application and is ready for GitHub Pages deployment.
+A static personal website for Changjin He, focused on robotics, embodied AI, computer vision, software engineering, and practical mechatronics experience. The site is built as a lightweight single-page React application and is ready for GitHub Pages deployment.
 
 Target website URL:
 
@@ -32,7 +32,7 @@ The production output is generated in `dist/`.
 5. Push to `main` or run the workflow manually from the Actions tab.
 6. Check Actions for the deployment result.
 
-This project uses `base: './'` in `vite.config.ts`, so it works for the user site repository:
+This project uses `base: './'` in `vite.config.ts`. For a user-site repository such as `CccccJin.github.io`, either `/` or `./` works; `./` is kept because it also remains robust if the site is previewed from a subdirectory or reused as a project site.
 
 ```text
 https://CccccJin.github.io/
@@ -42,16 +42,16 @@ https://CccccJin.github.io/
 
 Most personal content is centralized in these files:
 
-- `src/data/profile.ts` - name, intro, contact links, education
-- `src/data/projects.ts` - project descriptions, tech stacks, links
+- `src/data/profile.ts` - name, intro, contact links, and education
+- `src/data/projects.ts` - project descriptions, technical focus, tech stacks, and links
 - `src/data/experience.ts` - work experience entries
 - `src/data/skills.ts` - skills grouped by category
 
-Replace the placeholder links before publishing:
+Current public links:
 
-- Email: `mailto:TODO-email@example.com`
+- Email: `mailto:che917@aucklanduni.ac.nz`
 - GitHub: `https://github.com/CccccJin`
-- LinkedIn: `https://www.linkedin.com/in/TODO-linkedin-profile`
+- LinkedIn: `https://www.linkedin.com/in/changjin-he-908a2531a/`
 - CV: `./cv-placeholder.pdf`
 
-If you add a CV PDF, place it in the `public/` directory and update the `CV` link in `src/data/profile.ts`.
+The current CV link points to a placeholder PDF in `public/`. Replace `public/cv-placeholder.pdf` with the final resume PDF when ready, or update the `CV` link in `src/data/profile.ts`.
