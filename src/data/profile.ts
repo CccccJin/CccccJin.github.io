@@ -6,7 +6,7 @@ export type ProfileLink = {
 export const profile = {
   name: 'Changjin He',
   chineseName: '何昌劲',
-  avatarSrc: './avatar.jpg',
+  avatarSrc: './avatar.jpg?v=20260623-1848',
   avatarAlt: 'Portrait of Changjin He',
   title:
     'Mechatronics Engineer | Robotics & AI | Computer Vision | Full-stack Prototyping',
