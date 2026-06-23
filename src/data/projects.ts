@@ -68,30 +68,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'SO-ARM101 Robot Learning Prototype',
-    description:
-      'Built hands-on robot learning experiments around a leader-follower SO-ARM101 setup for teleoperation, robot data collection, imitation learning, and ACT/VLA-style exploration.',
-    focus:
-      'Connects low-cost robot hardware, Linux setup, teleoperation workflows, dataset collection, and modern embodied-AI learning patterns.',
-    tech: [
-      'Python',
-      'LeRobot',
-      'Teleoperation',
-      'Imitation Learning',
-      'ACT',
-      'VLA',
-      'Ubuntu',
-    ],
-    links: [
-      {
-        label: 'GitHub',
-        href: '#projects',
-      },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
-    ],
-  },
-  {
     title: 'Auckland Transport Computer Vision / Dashboard Work',
     description:
       'Supported intelligent transportation work by validating computer vision datasets and YOLOv8-based model outputs, documenting issues, and building an internal dashboard for transport data querying and operational visibility.',

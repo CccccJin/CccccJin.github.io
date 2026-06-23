@@ -13,6 +13,18 @@ function App() {
     <div className="page-shell">
       <Header profile={profile} />
 
+      <section
+        className="photography-strip"
+        aria-labelledby="photography-title"
+      >
+        <h2 id="photography-title">Photography</h2>
+        <div className="photo-slots">
+          <div className="photo-slot" aria-label="Photography work slot 1" />
+          <div className="photo-slot" aria-label="Photography work slot 2" />
+          <div className="photo-slot" aria-label="Photography work slot 3" />
+        </div>
+      </section>
+
       <main>
         <Section id="about" title="About">
           {profile.about.map((paragraph) => (

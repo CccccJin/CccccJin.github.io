@@ -11,7 +11,7 @@ export const profile = {
   title:
     'Mechatronics Engineer | Robotics & Embodied AI | Computer Vision | Full-stack Prototyping',
   intro:
-    'I build practical robotics, computer vision, and AI/software prototypes that connect sensing, control, data, and deployment. My background combines mechatronics research, full-stack engineering, computer vision validation, and field diagnostics for complex industrial equipment.',
+    'I build practical robotics, computer vision, and AI/software prototypes that connect sensing, control, data, and deployment. My background combines mechatronics research, full-stack engineering, computer vision validation, and field diagnostics for complex industrial equipment. Outside engineering, I like photography, swimming, and running.',
   about: [
     'I completed a Master of Mechatronics Engineering (Research) at the University of Auckland, focused on human-robot collaboration, UR5e control, robot speed and distance adaptation, and experimental evaluation of user experience.',
     'My engineering work spans ROS/MoveIt robot control, computer vision model validation, React/TypeScript dashboards, FastAPI data services, chemical similarity search, and hardware/software troubleshooting in semiconductor and FPD equipment environments.',
