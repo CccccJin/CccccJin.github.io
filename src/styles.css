@@ -15,7 +15,7 @@
   --light-muted: #707070;
   --border: #dddddd;
   --soft: #f6f7f8;
-  --media-col: 336px;
+  --media-col: 224px;
   --header-gap: 52px;
   --section-label: 170px;
   --section-gap: 28px;
@@ -326,7 +326,7 @@ h3 {
 
 @media (max-width: 460px) {
   :root {
-    --media-col: min(100%, 336px);
+    --media-col: min(100%, 224px);
     --header-gap: 16px;
   }
 
@@ -336,7 +336,7 @@ h3 {
 
   .avatar,
   .avatar-placeholder {
-    width: min(100%, 336px);
+    width: min(100%, 224px);
   }
 
   .intro {
