@@ -108,30 +108,4 @@ export const projects: Project[] = [
       { label: 'Details', href: '#projects' },
     ],
   },
-  {
-    title: 'Emotion-Driven Interactive Education Chatbot',
-    description:
-      'Built a real-time emotion-aware chatbot prototype using video capture, face detection, and PyTorch-based emotion recognition to adapt an interactive education interface.',
-    focus:
-      'Demonstrates applied computer vision, real-time GUI implementation, model integration, and human-facing AI interaction design.',
-    tech: ['Python', 'OpenCV', 'YOLOv8', 'AlexNet', 'PyTorch', 'GUI'],
-    links: [
-      { label: 'GitHub', href: '#projects' },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
-    ],
-  },
-  {
-    title: "Two-Arm Rubik's Cube Robot",
-    description:
-      'Developed C++ motion-control logic for a two-arm Rubik\'s Cube robot, translating solver output into manipulator sequences and using camera-based color recognition for cube-state classification.',
-    focus:
-      'Shows early robotics experience across motion planning, physical manipulation, image processing, and algorithm-to-hardware translation.',
-    tech: ['C++', 'Motion Control', 'Kociemba Solver', 'Machine Vision', 'HSV', 'Trajectory Planning'],
-    links: [
-      { label: 'GitHub', href: '#projects' },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
-    ],
-  },
 ]
