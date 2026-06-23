@@ -59,16 +59,6 @@ function App() {
           </div>
         </Section>
 
-        <Section id="contact" title="Contact">
-          <p>{profile.contactIntro}</p>
-          <nav className="inline-links" aria-label="Contact links">
-            {profile.links.map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </Section>
       </main>
 
       <Footer name={profile.name} />

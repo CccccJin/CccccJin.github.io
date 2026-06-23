@@ -22,7 +22,7 @@ export const profile = {
   links: [
     {
       label: 'Email',
-      href: 'mailto:TODO-email@example.com',
+      href: 'mailto:che917@aucklanduni.ac.nz',
     },
     {
       label: 'GitHub',
@@ -30,7 +30,7 @@ export const profile = {
     },
     {
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/TODO-linkedin-profile',
+      href: 'https://www.linkedin.com/in/changjin-he-908a2531a/',
     },
     {
       label: 'CV',
