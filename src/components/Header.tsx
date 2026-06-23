@@ -16,7 +16,16 @@ export function Header({ profile }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="identity">
-        <img className="avatar" src={profile.avatarSrc} alt={profile.avatarAlt} />
+        <div className="profile-media">
+          <img className="avatar" src={profile.avatarSrc} alt={profile.avatarAlt} />
+          <nav className="profile-links" aria-label="Profile links">
+            {profile.links.map((link) => (
+              <a key={link.label} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
 
         <div className="identity-copy">
           <p className="kicker">Robotics / AI / Engineering</p>
@@ -25,13 +34,6 @@ export function Header({ profile }: HeaderProps) {
             <span>{profile.chineseName}</span>
           </h1>
           <p className="title-line">{profile.title}</p>
-          <nav className="inline-links" aria-label="Profile links">
-            {profile.links.map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
         </div>
       </div>
 
