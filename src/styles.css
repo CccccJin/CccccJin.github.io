@@ -1,0 +1,295 @@
+:root {
+  color: #171717;
+  background: #ffffff;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --link: #0645ad;
+  --muted: #575757;
+  --light-muted: #707070;
+  --border: #dddddd;
+  --soft: #f6f7f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 1.15rem;
+}
+
+li + li {
+  margin-top: 0.22rem;
+}
+
+.page-shell {
+  width: min(100% - 32px, 900px);
+  margin: 0 auto;
+  padding: 42px 0 30px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 28px;
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.avatar-placeholder {
+  width: 112px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid #cfcfcf;
+  background: var(--soft);
+  color: #2b2b2b;
+  font-size: 1.55rem;
+  font-weight: 650;
+}
+
+.kicker {
+  color: var(--light-muted);
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+}
+
+h1,
+h2,
+h3 {
+  color: #111111;
+  line-height: 1.22;
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.15rem);
+  margin-bottom: 0.25rem;
+}
+
+h1 span {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.55em;
+  font-weight: 500;
+  margin-left: 0.65rem;
+  white-space: nowrap;
+}
+
+h2 {
+  font-size: 1.18rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.title-line {
+  color: #333333;
+  margin-bottom: 0.55rem;
+}
+
+.inline-links,
+.compact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.75rem;
+  align-items: center;
+}
+
+.inline-links a,
+.compact-links a {
+  line-height: 1.45;
+}
+
+.intro {
+  max-width: 760px;
+  margin-top: 22px;
+  color: #242424;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 28px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-content {
+  min-width: 0;
+}
+
+.section-content > p + p {
+  margin-top: 0.9rem;
+}
+
+.project-list,
+.experience-list,
+.skill-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.project-card {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 16px;
+}
+
+.project-card:last-child,
+.experience-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.tech-stack {
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin: 0.45rem 0 0.25rem;
+}
+
+.compact-links {
+  font-size: 0.94rem;
+}
+
+.experience-item {
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 15px;
+}
+
+.experience-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 0.35rem;
+}
+
+.experience-heading p,
+.experience-heading span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.experience-heading span {
+  white-space: nowrap;
+}
+
+.skill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.skill-group p,
+.education-item p {
+  color: #2f2f2f;
+}
+
+.institution {
+  color: var(--muted);
+  margin: 0.1rem 0 0.35rem;
+}
+
+.site-footer {
+  color: var(--light-muted);
+  font-size: 0.9rem;
+  padding-top: 22px;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 26px, 900px);
+    padding-top: 26px;
+  }
+
+  .identity {
+    grid-template-columns: 78px 1fr;
+    gap: 16px;
+  }
+
+  .avatar-placeholder {
+    width: 78px;
+    font-size: 1.1rem;
+  }
+
+  h1 span {
+    display: block;
+    margin: 0.18rem 0 0;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px 0;
+  }
+
+  .experience-heading {
+    display: block;
+  }
+
+  .experience-heading span {
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  .identity {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar-placeholder {
+    width: 86px;
+  }
+}
