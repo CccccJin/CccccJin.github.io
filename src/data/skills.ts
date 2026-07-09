@@ -1,78 +1,49 @@
 export type SkillGroup = {
   category: string
+  /** One-line statement of actual depth — not just a list of names. */
+  depth: string
   items: string[]
 }
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Programming',
+    category: 'Programming Languages',
+    depth: 'Python and TypeScript daily; C++ for robotics, R for statistical analysis.',
     items: ['Python', 'TypeScript', 'JavaScript', 'C++', 'R'],
   },
   {
-    category: 'AI / ML',
-    items: [
-      'PyTorch',
-      'TensorFlow',
-      'Scikit-learn',
-      'OpenCV',
-      'YOLOv8',
-      'ChemBERTa',
-      'Transformer fundamentals',
-      'imitation learning',
-      'reinforcement learning basics',
-    ],
-  },
-  {
     category: 'Robotics',
-    items: [
-      'ROS',
-      'Gazebo',
-      'MoveIt',
-      'UR5e',
-      'Robotiq 85',
-      'teleoperation',
-      'robot data collection',
-      'human-robot interaction',
-    ],
+    depth: 'Motion planning and control on a physical UR5e, from simulation to real-world user studies.',
+    items: ['ROS', 'MoveIt', 'Gazebo', 'UR5e', 'Robotiq 85', 'Teleoperation', 'HRI experiment design'],
   },
   {
-    category: 'Web / Software',
-    items: [
-      'React',
-      'Next.js',
-      'Vite',
-      'FastAPI',
-      'REST APIs',
-      'Docker',
-      'Git',
-      'Linux/Ubuntu',
-    ],
+    category: 'Machine Learning',
+    depth: 'Transformer internals implemented from scratch in PyTorch; applied embeddings and fine-tuning.',
+    items: ['PyTorch', 'Transformers', 'ChemBERTa', 'TensorFlow', 'scikit-learn', 'Imitation & RL basics'],
   },
   {
-    category: 'Data',
-    items: [
-      'DuckDB',
-      'MongoDB',
-      'Vertica',
-      'Pandas',
-      'NumPy',
-      'Matplotlib',
-      'Seaborn',
-      'data visualization',
-      'statistical analysis',
-      'ANOVA',
-    ],
+    category: 'Computer Vision',
+    depth: 'Dataset validation, model testing, and delivery workflows for object detection in production.',
+    items: ['YOLOv8', 'OpenCV', 'Annotation review', 'Model evaluation'],
   },
   {
-    category: 'Engineering',
-    items: [
-      'troubleshooting',
-      'field service',
-      'equipment diagnostics',
-      'calibration',
-      'signal and waveform analysis',
-      'customer-facing engineering',
-      'documentation',
-    ],
+    category: 'Backend & Data',
+    depth: 'API and data services over analytical and document stores, at ChEMBL scale.',
+    items: ['FastAPI', 'REST APIs', 'DuckDB', 'MongoDB', 'Vertica', 'RDKit', 'Pandas', 'NumPy'],
+  },
+  {
+    category: 'Frontend',
+    depth: 'Data-heavy dashboards and search interfaces in React and Next.js.',
+    items: ['React', 'Next.js', 'Vite', 'Data visualization'],
+  },
+  {
+    category: 'Tools & Infrastructure',
+    depth: 'Comfortable in Linux-first, containerized, CI-driven development environments.',
+    items: ['Docker', 'Git', 'GitHub Actions', 'Linux / Ubuntu'],
+  },
+  {
+    category: 'Research Methods',
+    depth: 'Controlled human-subject experiments and signal-level diagnostics of physical systems.',
+    items: ['Repeated-measures ANOVA', 'NASA-TLX', 'Godspeed', 'Fourier / waveform analysis', 'Data acquisition'],
   },
 ]

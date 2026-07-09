@@ -1,53 +1,80 @@
 export type ProfileLink = {
   label: string
   href: string
+  external?: boolean
 }
 
 export const profile = {
   name: 'Changjin He',
   chineseName: '何昌劲',
-  avatarSrc: './avatar.jpg?v=20260623-1848',
+  avatarSrc: './avatar.jpg',
   avatarAlt: 'Portrait of Changjin He',
-  title:
-    'Mechatronics Engineer | Robotics & Embodied AI | Computer Vision | Full-stack Prototyping',
+  location: 'Auckland, New Zealand',
+  availability: 'Open to AI / ML, robotics, computer vision, and software roles',
+  role: 'Robotics & AI engineer working across human-robot collaboration, computer vision, and ML systems.',
   intro:
-    'I build practical robotics, computer vision, and AI/software prototypes that connect sensing, control, data, and deployment. My background combines mechatronics research, full-stack engineering, computer vision validation, and field diagnostics for complex industrial equipment. Outside engineering, I like photography, swimming, and running.',
-  about: [
-    'I completed a Master of Mechatronics Engineering (Research) at the University of Auckland, focused on human-robot collaboration, UR5e control, robot speed and distance adaptation, and experimental evaluation of user experience.',
-    'My engineering work spans ROS/MoveIt robot control, computer vision model validation, React/TypeScript dashboards, FastAPI data services, chemical similarity search, and hardware/software troubleshooting in semiconductor and FPD equipment environments.',
-    'I am interested in robotics, embodied AI, computer vision, and practical AI systems that work outside ideal demos, where perception, motion, interfaces, data pipelines, and deployment constraints have to fit together.',
-  ],
+    'I built the full stack of a human-robot collaboration study on a physical UR5e — ROS/MoveIt control, experiment design, statistical analysis — validated YOLOv8 pipelines for intelligent transport at Auckland Transport, and shipped a full-stack similarity-search product over millions of ChEMBL compounds. Before that, five years of diagnosing semiconductor and FPD equipment in the field taught me how systems fail outside the lab.',
+  email: 'che917@aucklanduni.ac.nz',
+  cvHref: './cv-placeholder.pdf',
   links: [
-    {
-      label: 'Email',
-      href: 'mailto:che917@aucklanduni.ac.nz',
-    },
     {
       label: 'GitHub',
       href: 'https://github.com/CccccJin',
+      external: true,
     },
     {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/changjin-he-908a2531a/',
+      external: true,
     },
     {
-      label: 'CV',
-      href: './cv-placeholder.pdf',
+      label: 'Email',
+      href: 'mailto:che917@aucklanduni.ac.nz',
     },
   ] satisfies ProfileLink[],
 }
 
-export const education = {
-  entries: [
-    {
-      degree: 'Master of Mechatronics Engineering (Research)',
-      institution: 'University of Auckland',
-      location: 'Auckland, New Zealand',
-      period: 'Jul 2024 - Feb 2026',
-      details: [
-        'Research focus: emotion-aware human-robot collaboration with UR5e, robot speed and distance adaptation, controlled experiments, user workload/perception evaluation, and statistical analysis.',
-        'Relevant coursework: Human-Robot Interaction, Robotics and Society, Multivariable Control Systems, Advanced Control.',
-      ],
-    },
-  ],
+export type Highlight = {
+  title: string
+  body: string
 }
+
+export const highlights: Highlight[] = [
+  {
+    title: 'Robots outside simulation',
+    body: 'ROS/MoveIt motion control and a controlled user study on a physical UR5e — from Gazebo validation to real-robot experiments with human participants.',
+  },
+  {
+    title: 'Vision in production settings',
+    body: 'Dataset validation, YOLOv8 model testing, and delivery workflows for intelligent transport systems at Auckland Transport.',
+  },
+  {
+    title: 'ML from first principles',
+    body: 'A GPT-style transformer, tokenizer, and training loop implemented directly in PyTorch — not just called from a library.',
+  },
+  {
+    title: 'Field-proven debugging',
+    body: 'Five years diagnosing semiconductor and FPD equipment: signal analysis, calibration, and troubleshooting under real-world constraints.',
+  },
+]
+
+export type EducationEntry = {
+  degree: string
+  institution: string
+  location: string
+  period: string
+  details: string[]
+}
+
+export const education: EducationEntry[] = [
+  {
+    degree: 'Master of Mechatronics Engineering (Research)',
+    institution: 'University of Auckland',
+    location: 'Auckland, New Zealand',
+    period: 'Jul 2024 – Feb 2026',
+    details: [
+      'Thesis: emotion-aware human-robot collaboration with a UR5e — robot speed and distance adaptation, controlled experiments, workload and perception evaluation, and statistical analysis.',
+      'Coursework: Human-Robot Interaction, Robotics and Society, Multivariable Control Systems, Advanced Control.',
+    ],
+  },
+]

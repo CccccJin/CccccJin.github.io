@@ -1,111 +1,82 @@
 export type ProjectLink = {
-  label: 'GitHub' | 'Demo' | 'Details'
+  label: string
   href: string
 }
 
 export type Project = {
   title: string
-  description: string
-  focus: string
+  /** Short label rendered on the generated thumbnail. */
+  thumb: string
+  /** Accent hue (0-360) used by the generated thumbnail. */
+  hue: number
+  tagline: string
+  highlights: string[]
   tech: string[]
   links: ProjectLink[]
+  /** Shown when code cannot be public (research / internal work). */
+  note?: string
 }
 
 export const projects: Project[] = [
   {
-    title: 'Affordable Drug Alternatives',
-    description:
-      'Built a compound search and comparison prototype for exploring large-scale ChEMBL drug data. The public GitHub Pages demo presents searchable compound information and property visualization, while the full dynamic similarity workflow uses backend components for RDKit processing, DuckDB querying, and FastAPI services.',
-    focus:
-      'Demonstrates practical data engineering, scientific data search, prototype UX, and the tradeoff between static deployment and backend-heavy cheminformatics workflows.',
-    tech: [
-      'React',
-      'TypeScript',
-      'Vite',
-      'FastAPI',
-      'DuckDB',
-      'RDKit',
-      'ChEMBL 35',
-      'ChemBERTa',
-      'GitHub Pages',
-    ],
-    links: [
-      {
-        label: 'GitHub',
-        href: 'https://github.com/CccccJin/affordable-drug-alternatives',
-      },
-      {
-        label: 'Demo',
-        href: 'https://CccccJin.github.io/Affordable-Drug-Alternatives/',
-      },
-      { label: 'Details', href: '#projects' },
-    ],
-  },
-  {
     title: 'Emotion-Aware Human-Robot Collaboration with UR5e',
-    description:
-      'Developed a UR5e human-robot collaboration research system using ROS/MoveIt for pick-and-place control, trajectory execution, gripper/conveyor integration, and simulation-to-real validation. The study evaluated how robot speed and interaction distance influence task performance, workload, and user perception.',
-    focus:
-      'Shows robot control, HRC experiment design, real-robot integration, user-study measurement, and statistical analysis with repeated-measures methods.',
-    tech: [
-      'UR5e',
-      'ROS',
-      'MoveIt',
-      'Robotiq 85',
-      'Gazebo',
-      'R',
-      'ANOVA',
-      'NASA-TLX',
-      'GodSpeed',
+    thumb: 'UR5e · ROS',
+    hue: 244,
+    tagline:
+      'How should a robot adapt its speed and distance to the human working next to it? A controlled user study on a physical UR5e.',
+    highlights: [
+      'Built the full ROS/MoveIt control stack — pick-and-place planning, trajectory execution, Robotiq 85 gripper and conveyor integration — validated in Gazebo before real-robot deployment.',
+      'Designed and ran a repeated-measures user study varying robot speed and interaction distance, measuring task performance, workload (NASA-TLX), and perception (Godspeed).',
+      'Quantified how motion parameters shape human experience in shared workspaces using repeated-measures ANOVA in R.',
     ],
+    tech: ['UR5e', 'ROS', 'MoveIt', 'Gazebo', 'Robotiq 85', 'Python', 'R'],
+    links: [],
+    note: "Master's research thesis, University of Auckland — write-up available on request.",
+  },
+  {
+    title: 'Intelligent Transport Computer Vision & Operations Dashboard',
+    thumb: 'YOLOv8 · CV',
+    hue: 200,
+    tagline:
+      'Model validation and an internal operations dashboard for computer-vision-based transport monitoring at Auckland Transport.',
+    highlights: [
+      'Validated training data and ground truth for YOLOv8 detection use cases: annotation review, model testing, and structured issue reporting that fed directly into model iterations.',
+      'Designed and built an internal operations dashboard with React, Next.js, and TypeScript, backed by custom APIs over Vertica, MongoDB, and DuckDB.',
+      'Worked inside production delivery workflows — Git, Docker, cloud-based development — and documented deployment behavior for handoff across software, data, and operations teams.',
+    ],
+    tech: ['Python', 'YOLOv8', 'React', 'Next.js', 'TypeScript', 'Docker', 'Vertica', 'MongoDB', 'DuckDB'],
+    links: [],
+    note: 'Internal production work at Auckland Transport — code not public.',
+  },
+  {
+    title: 'Affordable Drug Alternatives',
+    thumb: 'ChEMBL · RDKit',
+    hue: 158,
+    tagline:
+      'Similarity search over millions of ChEMBL compounds to surface lower-cost alternatives to expensive drugs.',
+    highlights: [
+      'Built a FastAPI + DuckDB backend combining RDKit structural fingerprints with ChemBERTa embeddings for structural and semantic similarity search over ChEMBL 35.',
+      'Shipped a React/TypeScript frontend for compound search, filtering, ranking, clustering, export, and price comparison.',
+      'Split the system into a static GitHub Pages demo for exploration and a backend-powered dynamic workflow for the heavy cheminformatics — a deliberate deployment trade-off.',
+    ],
+    tech: ['FastAPI', 'DuckDB', 'RDKit', 'ChemBERTa', 'React', 'TypeScript', 'Vite'],
     links: [
-      {
-        label: 'GitHub',
-        href: '#projects',
-      },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
+      { label: 'GitHub', href: 'https://github.com/CccccJin/Affordable-Drug-Alternatives' },
+      { label: 'Live demo', href: 'https://cccccjin.github.io/Affordable-Drug-Alternatives/' },
     ],
   },
   {
-    title: 'Auckland Transport Computer Vision / Dashboard Work',
-    description:
-      'Supported intelligent transportation work by validating computer vision datasets and YOLOv8-based model outputs, documenting issues, and building an internal dashboard for transport data querying and operational visibility.',
-    focus:
-      'Demonstrates computer vision evaluation, data/API integration, role-based dashboard development, and exposure to deployment-oriented engineering workflows.',
-    tech: [
-      'Python',
-      'React',
-      'TypeScript',
-      'Next.js',
-      'Docker',
-      'Git',
-      'Vertica',
-      'MongoDB',
-      'DuckDB',
-      'Computer Vision',
-      'YOLOv8',
+    title: 'Training a Language Model from Scratch',
+    thumb: 'GPT · PyTorch',
+    hue: 24,
+    tagline:
+      'A GPT-style transformer implemented and trained from scratch to understand what the libraries hide.',
+    highlights: [
+      'Implemented tokenization, multi-head attention, transformer blocks, and the full training loop directly in PyTorch.',
+      'Ran small-scale GPU training experiments, tracking loss curves and diagnosing optimization behavior along the way.',
     ],
-    links: [
-      { label: 'GitHub', href: '#projects' },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
-    ],
-  },
-  {
-    title: 'Train LLM from Scratch',
-    description:
-      'Implemented a learning-oriented language model training project to understand tokenization, Transformer blocks, training loops, loss curves, and small-scale GPU experimentation.',
-    focus:
-      'Shows ability to move below library-level usage and reason about core model architecture, optimization behavior, and training diagnostics.',
-    tech: ['Python', 'PyTorch', 'Transformer', 'Tokenization', 'CUDA'],
-    links: [
-      {
-        label: 'GitHub',
-        href: '#projects',
-      },
-      { label: 'Demo', href: '#projects' },
-      { label: 'Details', href: '#projects' },
-    ],
+    tech: ['Python', 'PyTorch', 'Transformers', 'CUDA'],
+    links: [],
+    note: 'Learning-focused implementation — happy to walk through the code in an interview.',
   },
 ]
