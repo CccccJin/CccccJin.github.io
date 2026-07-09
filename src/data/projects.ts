@@ -61,8 +61,8 @@ export const projects: Project[] = [
     ],
     tech: ['FastAPI', 'DuckDB', 'RDKit', 'ChemBERTa', 'React', 'TypeScript', 'Vite'],
     links: [
-      { label: 'GitHub', href: 'https://github.com/CccccJin/Affordable-Drug-Alternatives' },
-      { label: 'Live demo', href: 'https://cccccjin.github.io/Affordable-Drug-Alternatives/' },
+      { label: 'code', href: 'https://github.com/CccccJin/Affordable-Drug-Alternatives' },
+      { label: 'demo', href: 'https://cccccjin.github.io/Affordable-Drug-Alternatives/' },
     ],
   },
   {

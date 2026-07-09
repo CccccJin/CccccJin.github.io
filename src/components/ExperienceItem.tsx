@@ -6,19 +6,13 @@ type ExperienceItemProps = {
 
 export function ExperienceItem({ experience }: ExperienceItemProps) {
   return (
-    <article className="experience-item">
-      <div className="experience-heading">
-        <div>
-          <h3>{experience.role}</h3>
-          <p className="experience-org">
-            {experience.company}
-            {experience.location && <span> · {experience.location}</span>}
-          </p>
-        </div>
-        <span className="experience-period">{experience.period}</span>
-      </div>
-
-      <ul className="experience-highlights">
+    <article className="exp-entry">
+      <p className="exp-heading">
+        <strong>{experience.role}</strong>, {experience.company}
+        {experience.location && `, ${experience.location}`}
+        <span className="exp-period"> · {experience.period}</span>
+      </p>
+      <ul className="exp-points">
         {experience.highlights.map((highlight) => (
           <li key={highlight}>{highlight}</li>
         ))}

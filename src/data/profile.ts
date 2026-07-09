@@ -9,52 +9,48 @@ export const profile = {
   chineseName: '何昌劲',
   avatarSrc: './avatar.jpg',
   avatarAlt: 'Portrait of Changjin He',
-  location: 'Auckland, New Zealand',
-  availability: 'Open to AI / ML, robotics, computer vision, and software roles',
-  role: 'Robotics & AI engineer working across human-robot collaboration, computer vision, and ML systems.',
-  intro:
-    'I built the full stack of a human-robot collaboration study on a physical UR5e — ROS/MoveIt control, experiment design, statistical analysis — validated YOLOv8 pipelines for intelligent transport at Auckland Transport, and shipped a full-stack similarity-search product over millions of ChEMBL compounds. Before that, five years of diagnosing semiconductor and FPD equipment in the field taught me how systems fail outside the lab.',
   email: 'che917@aucklanduni.ac.nz',
-  cvHref: './cv-placeholder.pdf',
   links: [
-    {
-      label: 'GitHub',
-      href: 'https://github.com/CccccJin',
-      external: true,
-    },
+    { label: 'CV', href: './cv-placeholder.pdf' },
+    { label: 'Email', href: 'mailto:che917@aucklanduni.ac.nz' },
+    { label: 'GitHub', href: 'https://github.com/CccccJin', external: true },
     {
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/changjin-he-908a2531a/',
       external: true,
     },
-    {
-      label: 'Email',
-      href: 'mailto:che917@aucklanduni.ac.nz',
-    },
   ] satisfies ProfileLink[],
 }
 
-export type Highlight = {
-  title: string
-  body: string
+export type NewsItem = {
+  date: string
+  text: string
+  href?: string
+  linkText?: string
 }
 
-export const highlights: Highlight[] = [
+export const news: NewsItem[] = [
   {
-    title: 'Robots outside simulation',
-    body: 'ROS/MoveIt motion control and a controlled user study on a physical UR5e — from Gazebo validation to real-robot experiments with human participants.',
+    date: '02/2026',
+    text: 'Completed my Master of Mechatronics Engineering (Research) at the University of Auckland.',
   },
   {
-    title: 'Vision in production settings',
-    body: 'Dataset validation, YOLOv8 model testing, and delivery workflows for intelligent transport systems at Auckland Transport.',
+    date: '11/2025',
+    text: 'Joined Auckland Transport as a Computer Vision Intern, working on intelligent transport systems.',
   },
   {
-    title: 'ML from first principles',
-    body: 'A GPT-style transformer, tokenizer, and training loop implemented directly in PyTorch — not just called from a library.',
+    date: '05/2025',
+    text: 'Joined Cloudcell as a Software Development Intern, building a drug similarity-search platform over ChEMBL.',
+    href: 'https://cccccjin.github.io/Affordable-Drug-Alternatives/',
+    linkText: 'demo',
   },
   {
-    title: 'Field-proven debugging',
-    body: 'Five years diagnosing semiconductor and FPD equipment: signal analysis, calibration, and troubleshooting under real-world constraints.',
+    date: '03/2025',
+    text: 'Graduate Teaching Assistant for MECHENG 313 at the University of Auckland.',
+  },
+  {
+    date: '07/2024',
+    text: 'Started my master’s research on emotion-aware human-robot collaboration with a UR5e.',
   },
 ]
 
