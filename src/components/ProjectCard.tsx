@@ -1,4 +1,5 @@
 import type { Project } from '../data/projects'
+import { LazyVideo } from './LazyVideo'
 
 type ProjectCardProps = {
   project: Project
@@ -7,13 +8,21 @@ type ProjectCardProps = {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="pub-entry">
-      <div
-        className="pub-thumb"
-        style={{ '--thumb-hue': project.hue } as React.CSSProperties}
-        aria-hidden="true"
-      >
-        <span>{project.thumb}</span>
-      </div>
+      {project.video ? (
+        <LazyVideo
+          src={project.video.src}
+          poster={project.video.poster}
+          label={`${project.title} demo video`}
+        />
+      ) : (
+        <div
+          className="pub-thumb"
+          style={{ '--thumb-hue': project.hue } as React.CSSProperties}
+          aria-hidden="true"
+        >
+          <span>{project.thumb}</span>
+        </div>
+      )}
 
       <div className="pub-body">
         <h3 className="pub-title">{project.title}</h3>

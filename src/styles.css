@@ -226,6 +226,13 @@ strong {
   font-weight: 600;
 }
 
+.pub-video {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  background: #f2f2f2;
+}
+
 .pub-title {
   margin: 0;
   font-size: 17px;

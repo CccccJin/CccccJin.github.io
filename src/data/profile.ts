@@ -31,6 +31,10 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    date: '03/2026',
+    text: 'Started a personal research project on robot learning with the SO-ARM101: teleoperated data collection, π0 (VLA) fine-tuning, and RL on real hardware.',
+  },
+  {
     date: '02/2026',
     text: 'Completed my Master of Mechatronics Engineering (Research) at the University of Auckland.',
   },
