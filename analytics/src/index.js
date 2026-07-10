@@ -1,10 +1,13 @@
 /**
  * Tiny private visitor counter for cccccjin.github.io.
  *
- * POST /hit    — beacon from the site: { id: <visitor uuid> }.
- *                Records country (from Cloudflare), visit count, timestamps.
- * GET  /stats  — full data, requires Authorization: Bearer <STATS_TOKEN>
- *                (or ?token=). Only the owner holds the token.
+ * POST /hit       — beacon from the site: { id: <visitor uuid> }.
+ *                   Records country (from Cloudflare), visit count, timestamps.
+ * GET  /stats     — full data, requires Authorization: Bearer <STATS_TOKEN>
+ *                   (or ?token=). Only the owner holds the token.
+ * GET  /dashboard — HTML dashboard shell (no data inside); asks for the
+ *                   token once, keeps it in the browser's localStorage,
+ *                   then reads /stats from the same origin.
  */
 
 const SITE_ORIGIN = 'https://cccccjin.github.io'
@@ -81,6 +84,137 @@ export default {
       )
     }
 
+    if (url.pathname === '/dashboard' && request.method === 'GET') {
+      return new Response(DASHBOARD_HTML, {
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'X-Robots-Tag': 'noindex',
+          'Cache-Control': 'no-store',
+        },
+      })
+    }
+
     return new Response('not found', { status: 404 })
   },
 }
+
+const DASHBOARD_HTML = `<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:,">
+<title>访客统计 · cccccjin.github.io</title>
+<style>
+  body { margin: 0; background: #fff; color: #111; font: 16px/1.6 -apple-system, "PingFang SC", "Segoe UI", sans-serif; }
+  .wrap { width: min(100% - 40px, 760px); margin: 40px auto 60px; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; }
+  .sub { color: #777; font-size: 13px; margin-bottom: 24px; }
+  .cards { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 26px; }
+  .card { flex: 1; min-width: 140px; border: 1px solid #e5e5e5; border-radius: 12px; padding: 14px 18px; }
+  .card b { display: block; font-size: 30px; font-weight: 650; }
+  .card span { color: #777; font-size: 13px; }
+  h2 { font-size: 15px; font-weight: 600; margin: 26px 0 10px; }
+  .row { display: flex; align-items: center; gap: 10px; margin: 5px 0; font-size: 14px; }
+  .row .name { width: 180px; }
+  .row .bar { height: 12px; background: #1772d0; border-radius: 3px; }
+  .row .n { color: #555; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; white-space: nowrap; }
+  th { color: #777; font-weight: 500; }
+  td.id { font-family: ui-monospace, monospace; }
+  button { font: inherit; padding: 6px 14px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; }
+  button:hover { border-color: #888; }
+  input { font: inherit; padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box; }
+  .err { color: #c0392b; }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>访客统计</h1><div class="sub">cccccjin.github.io · 仅持密钥者可见</div></div>
+    <button onclick="load()">刷新</button>
+  </div>
+  <div id="app">加载中…</div>
+</div>
+<script>
+const app = document.getElementById('app')
+const params = new URLSearchParams(location.search)
+let token = params.get('token')
+if (token) {
+  localStorage.setItem('stats-token', token)
+  history.replaceState(null, '', location.pathname)
+} else {
+  token = localStorage.getItem('stats-token')
+}
+
+function askToken(msg) {
+  app.innerHTML =
+    (msg ? '<p class="err">' + msg + '</p>' : '') +
+    '<p>请输入访问密钥(输入一次后此浏览器会记住):</p>' +
+    '<p><input id="tk" type="password" placeholder="STATS_TOKEN"></p>' +
+    '<p><button onclick="saveToken()">进入</button></p>'
+}
+function saveToken() {
+  token = document.getElementById('tk').value.trim()
+  if (token) { localStorage.setItem('stats-token', token); load() }
+}
+function flag(cc) {
+  return /^[A-Z]{2}$/.test(cc)
+    ? String.fromCodePoint(...[...cc].map((c) => 127397 + c.charCodeAt(0)))
+    : '🌐'
+}
+function fmt(iso) {
+  return iso ? new Date(iso).toLocaleString() : '-'
+}
+async function load() {
+  if (!token) return askToken()
+  app.textContent = '加载中…'
+  let res
+  try {
+    res = await fetch('/stats', { headers: { Authorization: 'Bearer ' + token } })
+  } catch {
+    app.innerHTML = '<p class="err">网络错误,请重试。</p>'
+    return
+  }
+  if (res.status === 401) {
+    localStorage.removeItem('stats-token')
+    token = null
+    return askToken('密钥不正确,请重新输入。')
+  }
+  const d = await res.json()
+  const countries = Object.entries(d.byCountry).sort((a, b) => b[1] - a[1])
+  const max = countries.length ? countries[0][1] : 1
+  const names = new Intl.DisplayNames(['zh'], { type: 'region' })
+  let html =
+    '<div class="cards">' +
+    '<div class="card"><b>' + d.uniqueVisitors + '</b><span>独立访客</span></div>' +
+    '<div class="card"><b>' + d.totalVisits + '</b><span>总访问次数</span></div>' +
+    '<div class="card"><b>' + countries.length + '</b><span>国家/地区</span></div>' +
+    '</div>'
+  if (countries.length) {
+    html += '<h2>按国家/地区</h2>'
+    for (const [cc, n] of countries) {
+      let label = cc
+      try { label = cc === '??' ? '未知' : names.of(cc) } catch { /* keep code */ }
+      html +=
+        '<div class="row"><span class="name">' + flag(cc) + ' ' + label + '</span>' +
+        '<div class="bar" style="width:' + Math.max(4, (n / max) * 320) + 'px"></div>' +
+        '<span class="n">' + n + '</span></div>'
+    }
+  }
+  html += '<h2>访客明细(最近在前)</h2><table><tr><th>访客 ID</th><th>国家</th><th>次数</th><th>首次访问</th><th>最近访问</th></tr>'
+  for (const v of d.visitors) {
+    html +=
+      '<tr><td class="id">' + v.id.slice(0, 13) + '…</td><td>' + flag(v.country) + ' ' + v.country +
+      '</td><td>' + v.visits + '</td><td>' + fmt(v.firstSeen) + '</td><td>' + fmt(v.lastSeen) + '</td></tr>'
+  }
+  html += '</table>'
+  app.innerHTML = html
+}
+load()
+</script>
+</body>
+</html>`
