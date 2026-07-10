@@ -28,11 +28,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <h3 className="pub-title">{project.title}</h3>
         <p className="pub-tagline">{project.tagline}</p>
 
-        <ul className="pub-points">
-          {project.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </ul>
+        {project.highlights.length > 0 && (
+          <ul className="pub-points">
+            {project.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+        )}
 
         <p className="pub-tech">
           <strong>Stack:</strong> {project.tech.join(', ')}

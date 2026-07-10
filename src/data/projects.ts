@@ -33,12 +33,7 @@ export const projects: Project[] = [
     },
     tagline:
       'A personal research project building the full robot-learning loop on a real SO-ARM101 arm: teleoperated data collection, imitation learning, VLA fine-tuning, and RL on hardware.',
-    highlights: [
-      'Built a demonstration data-collection pipeline with leader-follower teleoperation — data cleaning, timestamp alignment, and replay validation — collecting 50 multi-task demonstration trajectories; analyzed how action distributions and camera-view coverage affect downstream policy generalization, and refined the collection protocol accordingly (camera placement, randomized initial task states).',
-      'Fine-tuned π0 on downstream tasks with LoRA, comparing frozen vs. fine-tuned vision backbones for convergence speed and generalization in low-data regimes; analyzed the role of language-instruction conditioning in multi-task switching, validating how foundation-model priors improve few-shot manipulation.',
-      'Explored RL fine-tuning of imitation-learned policies on the real robot, analyzing how reward design and safety constraints affect training stability on hardware.',
-      'Ran the full pretraining pipeline end to end, systematically studying how batch size, learning-rate schedules, gradient accumulation, and mixed precision shape loss convergence and token throughput — a ground-up look at how VLA foundation models train.',
-    ],
+    highlights: [],
     tech: [
       'LeRobot',
       'ACT',
