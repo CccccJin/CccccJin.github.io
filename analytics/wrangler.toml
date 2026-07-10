@@ -1,0 +1,7 @@
+name = "site-analytics"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[[kv_namespaces]]
+binding = "STATS"
+id = "4fb40a9a918d4a17b643f8125e4812be"

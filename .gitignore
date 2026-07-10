@@ -25,3 +25,7 @@ dist-ssr
 *.sln
 *.sw?
 /demo.mp4
+
+# private analytics credentials
+.stats.env
+.wrangler/
