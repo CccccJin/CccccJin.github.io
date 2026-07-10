@@ -54,23 +54,3 @@ export const news: NewsItem[] = [
   },
 ]
 
-export type EducationEntry = {
-  degree: string
-  institution: string
-  location: string
-  period: string
-  details: string[]
-}
-
-export const education: EducationEntry[] = [
-  {
-    degree: 'Master of Mechatronics Engineering (Research)',
-    institution: 'University of Auckland',
-    location: 'Auckland, New Zealand',
-    period: 'Jul 2024 – Feb 2026',
-    details: [
-      'Thesis: emotion-aware human-robot collaboration with a UR5e — robot speed and distance adaptation, controlled experiments, workload and perception evaluation, and statistical analysis.',
-      'Coursework: Human-Robot Interaction, Robotics and Society, Multivariable Control Systems, Advanced Control.',
-    ],
-  },
-]

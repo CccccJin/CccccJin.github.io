@@ -256,48 +256,6 @@ strong {
 }
 
 /* ---------------------------------------------------------------------------
-   Experience & education
---------------------------------------------------------------------------- */
-.exp-list {
-  display: grid;
-  gap: 20px;
-}
-
-.exp-heading {
-  margin-bottom: 5px;
-}
-
-.exp-period {
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-.exp-points {
-  padding-left: 1.2em;
-}
-
-.exp-points li + li {
-  margin-top: 4px;
-}
-
-.edu-entry .edu-detail {
-  margin-top: 5px;
-}
-
-/* Skills */
-.skill-list {
-  padding-left: 1.3em;
-}
-
-.skill-list li + li {
-  margin-top: 8px;
-}
-
-.skill-depth {
-  color: var(--muted);
-}
-
-/* ---------------------------------------------------------------------------
    Footer
 --------------------------------------------------------------------------- */
 .site-footer {

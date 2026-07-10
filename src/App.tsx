@@ -1,12 +1,9 @@
-import { ExperienceItem } from './components/ExperienceItem'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { ProjectCard } from './components/ProjectCard'
 import { Section } from './components/Section'
-import { experiences } from './data/experience'
-import { education, news } from './data/profile'
+import { news } from './data/profile'
 import { projects } from './data/projects'
-import { skillGroups } from './data/skills'
 
 function App() {
   return (
@@ -44,50 +41,6 @@ function App() {
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
-      </Section>
-
-      <hr />
-
-      <Section id="experience" title="Experience">
-        <div className="exp-list">
-          {experiences.map((experience) => (
-            <ExperienceItem
-              key={`${experience.company}-${experience.role}`}
-              experience={experience}
-            />
-          ))}
-        </div>
-      </Section>
-
-      <hr />
-
-      <Section id="skills" title="Skills">
-        <ul className="skill-list">
-          {skillGroups.map((group) => (
-            <li key={group.category}>
-              <strong>{group.category}:</strong> {group.items.join(', ')}.{' '}
-              <span className="skill-depth">{group.depth}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <hr />
-
-      <Section id="education" title="Education">
-        {education.map((item) => (
-          <article className="edu-entry" key={`${item.degree}-${item.institution}`}>
-            <p className="exp-heading">
-              <strong>{item.degree}</strong>, {item.institution}, {item.location}
-              <span className="exp-period"> · {item.period}</span>
-            </p>
-            {item.details.map((detail) => (
-              <p className="edu-detail" key={detail}>
-                {detail}
-              </p>
-            ))}
-          </article>
-        ))}
       </Section>
       </main>
 
