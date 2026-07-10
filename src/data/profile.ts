@@ -53,8 +53,8 @@ export const news: NewsItem[] = [
     text: 'Graduate Teaching Assistant for MECHENG 313 at the University of Auckland.',
   },
   {
-    date: '07/2024',
-    text: 'Started my master’s research on emotion-aware human-robot collaboration with a UR5e.',
+    date: '01/2025',
+    text: 'Joined the Industrial AI Group at the University of Auckland for my master’s research on emotion-aware human-robot collaboration with a UR5e.',
   },
 ]
 
