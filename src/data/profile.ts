@@ -13,7 +13,7 @@ export const profile = {
   avatarAlt: 'Portrait of Changjin He',
   email: 'che917@aucklanduni.ac.nz',
   links: [
-    { label: { en: 'CV', zh: '简历' }, href: './cv-placeholder.pdf' },
+    { label: { en: 'CV', zh: '简历' }, href: './CV_ChangjinHe_English.pdf' },
     { label: { en: 'Email', zh: '邮箱' }, href: 'mailto:che917@aucklanduni.ac.nz' },
     { label: { en: 'GitHub', zh: 'GitHub' }, href: 'https://github.com/CccccJin', external: true },
     {
