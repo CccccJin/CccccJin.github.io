@@ -189,7 +189,7 @@ strong {
 .pub-thumb {
   display: grid;
   place-items: center;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   border-radius: 15px;
   background:
     radial-gradient(120% 120% at 15% 0%, hsl(var(--thumb-hue) 85% 96%) 0%, transparent 60%),
