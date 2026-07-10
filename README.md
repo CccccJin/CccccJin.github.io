@@ -55,3 +55,8 @@ Current public links:
 - CV: `./cv-placeholder.pdf`
 
 The current CV link points to a placeholder PDF in `public/`. Replace `public/cv-placeholder.pdf` with the final resume PDF when ready, or update the `CV` link in `src/data/profile.ts`.
+
+Check visitor stats:
+```bash
+npm run stats
+```
