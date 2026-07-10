@@ -106,6 +106,9 @@ const DASHBOARD_HTML = `<!doctype html>
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:,">
 <title>访客统计 · cccccjin.github.io</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"></script>
 <style>
   body { margin: 0; background: #fff; color: #111; font: 16px/1.6 -apple-system, "PingFang SC", "Segoe UI", sans-serif; }
   .wrap { width: min(100% - 40px, 760px); margin: 40px auto 60px; }
@@ -116,6 +119,8 @@ const DASHBOARD_HTML = `<!doctype html>
   .card b { display: block; font-size: 30px; font-weight: 650; }
   .card span { color: #777; font-size: 13px; }
   h2 { font-size: 15px; font-weight: 600; margin: 26px 0 10px; }
+  #map { height: 360px; border: 1px solid #eee; border-radius: 12px; }
+  .jvm-tooltip { font-family: inherit; }
   .row { display: flex; align-items: center; gap: 10px; margin: 5px 0; font-size: 14px; }
   .row .name { width: 180px; }
   .row .bar { height: 12px; background: #1772d0; border-radius: 3px; }
@@ -188,12 +193,19 @@ async function load() {
   const countries = Object.entries(d.byCountry).sort((a, b) => b[1] - a[1])
   const max = countries.length ? countries[0][1] : 1
   const names = new Intl.DisplayNames(['zh'], { type: 'region' })
+  const visitsByCountry = {}
+  for (const v of d.visitors) {
+    if (/^[A-Z]{2}$/.test(v.country)) {
+      visitsByCountry[v.country] = (visitsByCountry[v.country] || 0) + (v.visits || 0)
+    }
+  }
   let html =
     '<div class="cards">' +
     '<div class="card"><b>' + d.uniqueVisitors + '</b><span>独立访客</span></div>' +
     '<div class="card"><b>' + d.totalVisits + '</b><span>总访问次数</span></div>' +
     '<div class="card"><b>' + countries.length + '</b><span>国家/地区</span></div>' +
-    '</div>'
+    '</div>' +
+    '<h2>全球访问热度</h2><div id="map"></div>'
   if (countries.length) {
     html += '<h2>按国家/地区</h2>'
     for (const [cc, n] of countries) {
@@ -213,6 +225,48 @@ async function load() {
   }
   html += '</table>'
   app.innerHTML = html
+  renderMap(visitsByCountry, d.byCountry)
+}
+
+let worldMap = null
+function renderMap(visitsByCountry, visitorsByCountry) {
+  const el = document.getElementById('map')
+  if (!el) return
+  if (typeof jsVectorMap === 'undefined') {
+    el.textContent = '地图组件加载失败(CDN 不可达),其余数据不受影响。'
+    el.style.padding = '20px'
+    return
+  }
+  if (worldMap) {
+    try { worldMap.destroy() } catch { /* stale instance */ }
+    worldMap = null
+  }
+  worldMap = new jsVectorMap({
+    selector: '#map',
+    map: 'world',
+    backgroundColor: 'transparent',
+    zoomButtons: true,
+    zoomOnScroll: false,
+    regionStyle: {
+      initial: { fill: '#e9edf2', stroke: '#fff', strokeWidth: 0.4 },
+      hover: { fill: '#f09228' },
+    },
+    series: {
+      regions: [{
+        attribute: 'fill',
+        values: visitsByCountry,
+        scale: ['#cfe0f5', '#0b4f9e'],
+        normalizeFunction: 'polynomial',
+      }],
+    },
+    onRegionTooltipShow(event, tooltip, code) {
+      const visits = visitsByCountry[code] || 0
+      const people = visitorsByCountry[code] || 0
+      tooltip.text(
+        tooltip.text() + ':' + visits + ' 次访问 · ' + people + ' 位访客',
+      )
+    },
+  })
 }
 load()
 </script>
