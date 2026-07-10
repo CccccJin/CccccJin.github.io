@@ -1,3 +1,4 @@
+import { ui, useLocale } from '../i18n'
 import type { Project } from '../data/projects'
 import { LazyVideo } from './LazyVideo'
 
@@ -6,13 +7,15 @@ type ProjectCardProps = {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const locale = useLocale()
+
   return (
     <article className="pub-entry">
       {project.video ? (
         <LazyVideo
           src={project.video.src}
           poster={project.video.poster}
-          label={`${project.title} demo video`}
+          label={`${project.title[locale]} demo video`}
         />
       ) : (
         <div
@@ -25,35 +28,27 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
 
       <div className="pub-body">
-        <h3 className="pub-title">{project.title}</h3>
-        <p className="pub-tagline">{project.tagline}</p>
-
-        {project.highlights.length > 0 && (
-          <ul className="pub-points">
-            {project.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </ul>
-        )}
+        <h3 className="pub-title">{project.title[locale]}</h3>
+        <p className="pub-tagline">{project.tagline[locale]}</p>
 
         <p className="pub-tech">
-          <strong>Stack:</strong> {project.tech.join(', ')}
+          <strong>{ui.stack[locale]}</strong> {project.tech.join(', ')}
         </p>
 
         {(project.links.length > 0 || project.note) && (
           <p className="pub-links">
             {project.links.map((link, index) => (
-              <span key={link.label}>
+              <span key={link.label.en}>
                 {index > 0 && ' | '}
                 <a href={link.href} target="_blank" rel="noreferrer">
-                  {link.label.toLowerCase()}
+                  {link.label[locale]}
                 </a>
               </span>
             ))}
             {project.note && (
               <i className="pub-note">
                 {project.links.length > 0 && ' — '}
-                {project.note}
+                {project.note[locale]}
               </i>
             )}
           </p>
