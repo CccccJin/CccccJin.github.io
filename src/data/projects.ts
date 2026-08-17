@@ -57,6 +57,44 @@ export const projects: Project[] = [
   },
   {
     title: {
+      en: 'Imperfruit',
+      zh: 'Imperfruit',
+    },
+    thumb: 'FastAPI · Next.js',
+    hue: 96,
+    // Demo video slot: record the walkthrough, drop the two files into
+    // public/videos/, then uncomment this block.
+    // video: {
+    //   src: './videos/imperfruit.mp4',
+    //   poster: './videos/imperfruit-poster.jpg',
+    // },
+    tagline: {
+      en: 'A self-improving database of real sell-through and spoilage data, surfaced as ranked, explainable actions.',
+      zh: '一个可自我完善的真实动销与损耗数据库,并将其转化为可排序、可解释的行动建议。',
+    },
+    tech: [
+      'Python 3.12',
+      'FastAPI',
+      'SQLAlchemy 2',
+      'SQLite',
+      'pandas',
+      'numpy',
+      'scipy',
+      'statsmodels (Holt-Winters / SES)',
+      'Next.js 16 (App Router)',
+      'TypeScript',
+      'Tailwind CSS 4',
+      'Recharts 3',
+      'Vercel',
+    ],
+    links: [],
+    note: {
+      en: 'Built at the AI Hackathon 2026, AUT South Campus.',
+      zh: '于 AUT 南校区 AI Hackathon 2026 期间完成。',
+    },
+  },
+  {
+    title: {
       en: 'Emotion-Aware Human-Robot Collaboration with UR5e',
       zh: '情绪感知的 UR5e 人机协作',
     },

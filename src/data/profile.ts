@@ -33,6 +33,13 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    date: '08/2026',
+    text: {
+      en: 'Took part in the AI Hackathon 2026 at AUT South Campus.',
+      zh: '参加了在 AUT 南校区举办的 AI Hackathon 2026。',
+    },
+  },
+  {
     date: '03/2026',
     text: {
       en: 'Started a personal research project on robot learning with the SO-ARM101: teleoperated data collection, π0 (VLA) fine-tuning, and RL on real hardware.',
