@@ -42,6 +42,9 @@ const fmtDate = (iso) => (iso ? iso.replace('T', ' ').slice(0, 16) + ' UTC' : '-
 console.log('─'.repeat(64))
 console.log(`  Unique visitors : ${data.uniqueVisitors}`)
 console.log(`  Total visits    : ${data.totalVisits}`)
+if (data.excluded?.visits) {
+  console.log(`  (excluding ${data.excluded.visits} own visits from ${data.excluded.visitors} id)`)
+}
 console.log('─'.repeat(64))
 
 const countries = Object.entries(data.byCountry).sort((a, b) => b[1] - a[1])

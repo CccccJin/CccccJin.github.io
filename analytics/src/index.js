@@ -12,6 +12,21 @@
 
 const SITE_ORIGIN = 'https://cccccjin.github.io'
 
+/**
+ * The owner's own visitor ids. Their hits are acknowledged but never written,
+ * and history already in KV is left untouched yet kept out of every number
+ * /stats reports.
+ *
+ * The id is a UUID kept in localStorage under `visitor-id`, so it is per
+ * browser profile: a new browser, a new device, or a cleared localStorage
+ * mints a new id that has to be added here too.
+ */
+const OWN_VISITOR_IDS = new Set([
+  '56e5775a-dfb5-4dfb-9407-1cb52a541e60', // NZ — main browser
+])
+
+const isOwnVisitor = (id) => OWN_VISITOR_IDS.has(id.toLowerCase())
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url)
@@ -38,6 +53,13 @@ export default {
         typeof body?.id === 'string' && /^[0-9a-f-]{8,64}$/i.test(body.id) ? body.id : null
       if (!id) return new Response('bad id', { status: 400 })
 
+      // Own visit: answer normally so the beacon stays silent, but record nothing.
+      if (isOwnVisitor(id)) {
+        return new Response('ok', {
+          headers: { 'Access-Control-Allow-Origin': SITE_ORIGIN },
+        })
+      }
+
       const country = request.cf?.country || '??'
       const now = new Date().toISOString()
       const key = `visitor:${id}`
@@ -60,12 +82,22 @@ export default {
       }
 
       const visitors = []
+      // Own history still sitting in KV, reported separately so the numbers
+      // above it are visitors only.
+      const excluded = { visitors: 0, visits: 0 }
       let cursor
       do {
         const page = await env.STATS.list({ prefix: 'visitor:', cursor })
         for (const k of page.keys) {
           const record = await env.STATS.get(k.name, 'json')
-          if (record) visitors.push({ id: k.name.slice('visitor:'.length), ...record })
+          if (!record) continue
+          const id = k.name.slice('visitor:'.length)
+          if (isOwnVisitor(id)) {
+            excluded.visitors += 1
+            excluded.visits += record.visits || 0
+            continue
+          }
+          visitors.push({ id, ...record })
         }
         cursor = page.list_complete ? undefined : page.cursor
       } while (cursor)
@@ -79,7 +111,13 @@ export default {
       visitors.sort((a, b) => (b.lastSeen || '').localeCompare(a.lastSeen || ''))
 
       return new Response(
-        JSON.stringify({ uniqueVisitors: visitors.length, totalVisits, byCountry, visitors }),
+        JSON.stringify({
+          uniqueVisitors: visitors.length,
+          totalVisits,
+          byCountry,
+          visitors,
+          excluded,
+        }),
         { headers: { 'Content-Type': 'application/json' } },
       )
     }
@@ -204,8 +242,13 @@ async function load() {
     '<div class="card"><b>' + d.uniqueVisitors + '</b><span>独立访客</span></div>' +
     '<div class="card"><b>' + d.totalVisits + '</b><span>总访问次数</span></div>' +
     '<div class="card"><b>' + countries.length + '</b><span>国家/地区</span></div>' +
-    '</div>' +
-    '<h2>全球访问热度</h2><div id="map"></div>'
+    '</div>'
+  if (d.excluded && d.excluded.visits) {
+    html +=
+      '<p class="sub">已排除本人的 ' + d.excluded.visits + ' 次访问(' +
+      d.excluded.visitors + ' 个 ID),上面的数字均不含在内。</p>'
+  }
+  html += '<h2>全球访问热度</h2><div id="map"></div>'
   if (countries.length) {
     html += '<h2>按国家/地区</h2>'
     for (const [cc, n] of countries) {
