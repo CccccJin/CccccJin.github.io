@@ -78,21 +78,7 @@ export const allProjects: Project[] = [
       en: 'A self-improving database of real sell-through and spoilage data, surfaced as ranked, explainable actions.',
       zh: '一个可自我完善的真实动销与损耗数据库,并将其转化为可排序、可解释的行动建议。',
     },
-    tech: [
-      'Python 3.12',
-      'FastAPI',
-      'SQLAlchemy 2',
-      'SQLite',
-      'pandas',
-      'numpy',
-      'scipy',
-      'statsmodels (Holt-Winters / SES)',
-      'Next.js 16 (App Router)',
-      'TypeScript',
-      'Tailwind CSS 4',
-      'Recharts 3',
-      'Vercel',
-    ],
+    tech: ['FastAPI', 'SQLite', 'pandas', 'numpy', 'scipy', 'Next.js 16', 'TypeScript'],
     links: [
       {
         label: { en: 'demo', zh: '演示' },

@@ -24,4 +24,5 @@ export const ui = {
   footerDesign: { en: 'Design inspired by', zh: '网页设计参考' },
   footerSite: { en: 'Jon Barron’s website', zh: 'Jon Barron 的主页' },
   footerSource: { en: 'Source', zh: '源码' },
+  footerUpdated: { en: 'Last updated', zh: '最后更新' },
 } satisfies Record<string, Localized>

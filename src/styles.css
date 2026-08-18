@@ -302,9 +302,22 @@ strong {
 .site-footer {
   margin-top: 40px;
   padding-top: 16px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 24px;
   color: var(--muted);
   font-size: 14px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Keeps the credit pinned right even once the two lines wrap on narrow screens. */
+.footer-credit {
+  margin-left: auto;
 }
 
 .site-footer a {
