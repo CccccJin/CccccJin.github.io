@@ -6,6 +6,14 @@
 
 const ENDPOINT = 'https://site-analytics.cccccjin.workers.dev/hit'
 
+/**
+ * My own browsers. Skipping the beacon here saves a pointless request; the
+ * worker holds the same list and is the authority, since anyone can edit
+ * their own localStorage. Keep the two in step — see OWN_VISITOR_IDS in
+ * analytics/src/index.js.
+ */
+const OWN_VISITOR_IDS = ['56e5775a-dfb5-4dfb-9407-1cb52a541e60']
+
 export function trackVisit() {
   if (window.location.hostname !== 'cccccjin.github.io') return
   if (!ENDPOINT.startsWith('https://')) return
@@ -16,6 +24,7 @@ export function trackVisit() {
       id = crypto.randomUUID()
       localStorage.setItem('visitor-id', id)
     }
+    if (OWN_VISITOR_IDS.includes(id.toLowerCase())) return
     const payload = JSON.stringify({ id })
     // Plain-text beacon avoids a CORS preflight; we never read the response.
     if (!navigator.sendBeacon?.(ENDPOINT, payload)) {
