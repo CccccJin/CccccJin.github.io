@@ -87,7 +87,12 @@ export const projects: Project[] = [
       'Recharts 3',
       'Vercel',
     ],
-    links: [],
+    links: [
+      {
+        label: { en: 'demo', zh: '演示' },
+        href: 'https://shelfsense-inky.vercel.app/',
+      },
+    ],
     note: {
       en: 'Built at the AI Hackathon 2026, AUT South Campus.',
       zh: '于 AUT 南校区 AI Hackathon 2026 期间完成。',
