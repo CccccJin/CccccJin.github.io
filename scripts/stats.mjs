@@ -36,6 +36,33 @@ if (!res.ok) {
 }
 const data = await res.json()
 
+/**
+ * Same list as OWN_VISITOR_IDS in analytics/src/index.js. A worker that
+ * predates the server-side filter sends every record and no `excluded`
+ * block, so fall back to filtering here — this viewer should report
+ * visitor-only numbers either way.
+ */
+const OWN_VISITOR_IDS = new Set(['56e5775a-dfb5-4dfb-9407-1cb52a541e60'])
+
+if (!data.excluded) {
+  const excluded = { visitors: 0, visits: 0 }
+  const kept = []
+  for (const v of data.visitors) {
+    if (OWN_VISITOR_IDS.has(v.id.toLowerCase())) {
+      excluded.visitors += 1
+      excluded.visits += v.visits || 0
+    } else {
+      kept.push(v)
+    }
+  }
+  data.visitors = kept
+  data.uniqueVisitors = kept.length
+  data.totalVisits = kept.reduce((n, v) => n + (v.visits || 0), 0)
+  data.byCountry = {}
+  for (const v of kept) data.byCountry[v.country] = (data.byCountry[v.country] || 0) + 1
+  data.excluded = excluded
+}
+
 const countryName = new Intl.DisplayNames(['en'], { type: 'region' })
 const fmtDate = (iso) => (iso ? iso.replace('T', ' ').slice(0, 16) + ' UTC' : '-')
 
