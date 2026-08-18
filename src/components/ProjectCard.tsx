@@ -17,6 +17,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           poster={project.video.poster}
           label={`${project.title[locale]} demo video`}
         />
+      ) : project.cover ? (
+        <img
+          className="pub-cover"
+          src={project.cover.src}
+          alt={project.cover.alt[locale]}
+          loading="lazy"
+          decoding="async"
+        />
       ) : (
         <div
           className="pub-thumb"

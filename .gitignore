@@ -26,6 +26,9 @@ dist-ssr
 *.sw?
 /demo.mp4
 
+# full-size source recordings and covers — web-sized versions live in public/
+/demo/
+
 # private analytics credentials
 .stats.env
 .wrangler/

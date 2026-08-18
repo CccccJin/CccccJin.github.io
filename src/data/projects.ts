@@ -16,14 +16,22 @@ export type Project = {
     src: string
     poster: string
   }
+  /** Still demo image shown instead of the generated thumbnail, when there is no video. */
+  cover?: {
+    src: string
+    alt: Localized
+  }
   tagline: Localized
   tech: string[]
   links: ProjectLink[]
   /** Shown when code cannot be public (research / internal work). */
   note?: Localized
+  /** Kept in this file but left off the page. Flip back to show it again. */
+  hidden?: boolean
 }
 
-export const projects: Project[] = [
+/** Every project ever listed, including the hidden ones. */
+export const allProjects: Project[] = [
   {
     title: {
       en: 'SO-ARM101: Robot Learning from Teleoperation to VLA Fine-Tuning',
@@ -62,12 +70,10 @@ export const projects: Project[] = [
     },
     thumb: 'FastAPI · Next.js',
     hue: 96,
-    // Demo video slot: record the walkthrough, drop the two files into
-    // public/videos/, then uncomment this block.
-    // video: {
-    //   src: './videos/imperfruit.mp4',
-    //   poster: './videos/imperfruit-poster.jpg',
-    // },
+    video: {
+      src: './videos/imperfruit.mp4',
+      poster: './videos/imperfruit-poster.jpg',
+    },
     tagline: {
       en: 'A self-improving database of real sell-through and spoilage data, surfaced as ranked, explainable actions.',
       zh: '一个可自我完善的真实动销与损耗数据库,并将其转化为可排序、可解释的行动建议。',
@@ -105,6 +111,13 @@ export const projects: Project[] = [
     },
     thumb: 'UR5e · ROS',
     hue: 244,
+    cover: {
+      src: './covers/ur5e.jpg',
+      alt: {
+        en: 'System diagram: facial detection and HRV feed an affect estimator, whose adaptive policy sets the UR5e speed and proximity',
+        zh: '系统框图:面部检测与 HRV 输入情绪估计器,其自适应策略决定 UR5e 的速度与距离',
+      },
+    },
     tagline: {
       en: 'How should a robot adapt its speed and distance to the human working next to it? A controlled user study on a physical UR5e.',
       zh: '机械臂与人共同工作时,应当如何调整自己的速度与距离?在真实 UR5e 上开展的对照用户实验。',
@@ -123,6 +136,7 @@ export const projects: Project[] = [
     },
     thumb: 'YOLOv8 · CV',
     hue: 200,
+    hidden: true,
     tagline: {
       en: 'Model validation and an internal operations dashboard for computer-vision-based transport monitoring at Auckland Transport.',
       zh: '在 Auckland Transport 参与基于视觉的交通监测工作:模型验证,以及内部运营看板的设计与开发。',
@@ -141,6 +155,13 @@ export const projects: Project[] = [
     },
     thumb: 'ChEMBL · RDKit',
     hue: 158,
+    cover: {
+      src: './covers/affordable.jpg',
+      alt: {
+        en: 'ChemSearch landing page: search millions of compounds by SMILES string or compound name',
+        zh: 'ChemSearch 首页:支持按 SMILES 字符串或化合物名称检索数百万化合物',
+      },
+    },
     tagline: {
       en: 'Similarity search over millions of ChEMBL compounds to surface lower-cost alternatives to expensive drugs.',
       zh: '在数百万 ChEMBL 化合物中进行相似性检索,尝试为昂贵药物找到更平价的替代选项。',
@@ -164,6 +185,7 @@ export const projects: Project[] = [
     },
     thumb: 'GPT · PyTorch',
     hue: 24,
+    hidden: true,
     tagline: {
       en: 'A GPT-style transformer implemented and trained from scratch to understand what the libraries hide.',
       zh: '从零实现并训练一个 GPT 风格的 Transformer,想弄明白那些被框架封装起来的细节。',
@@ -176,3 +198,6 @@ export const projects: Project[] = [
     },
   },
 ]
+
+/** What the page renders. */
+export const projects: Project[] = allProjects.filter((project) => !project.hidden)
