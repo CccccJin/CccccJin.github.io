@@ -29,6 +29,16 @@ dist-ssr
 # full-size source recordings and covers — web-sized versions live in public/
 /demo/
 
+# gallery originals stay on this machine; only the web-sized exports under
+# public/gallery/ are committed and deployed. album.json is kept, so the
+# captions and album details stay in the repo.
+/photos/**/*.jpg
+/photos/**/*.jpeg
+/photos/**/*.JPG
+/photos/**/*.JPEG
+/photos/**/*.png
+/photos/**/*.PNG
+
 # private analytics credentials
 .stats.env
 .wrangler/

@@ -18,7 +18,8 @@ photos/
 ```
 
 - 支持 `.jpg` / `.jpeg` / `.png`。HEIC 和 CR2 不支持，先用「预览」或 Lightroom 导出成 JPEG。
-- 原图多大都行，脚本会自动缩小。但导出时最好控制在 5MB 以内 —— git 会永久保存每一个版本。
+- **原图多大都行**（几十 MB 也没问题），脚本会缩小。原图只留在这台电脑上，不会进 git、
+  也不会上传到 GitHub —— 见下面「原图不会上云」。
 - 相册文件夹按名字**倒序**排列（新的在上面），所以想排序就用 `2026-07-...` 这种命名。
 
 **2. 跑一下脚本 / Run the script**
@@ -79,10 +80,35 @@ git add -A && git commit -m "Add the Rangitoto photos" && git push
 
 推到 main 就会自动部署，一分钟左右上线。
 
+## 原图不会上云 / Originals stay on this machine
+
+`.gitignore` 里忽略了 `photos/` 下所有的图片文件，所以：
+
+| 文件 | 进 git / 上 GitHub 吗 | 大小 |
+| --- | --- | --- |
+| `photos/<相册>/*.jpg`（你的原图） | **不会**，只在这台电脑上 | 想多大都行 |
+| `photos/<相册>/album.json`（说明文字） | 会 —— 几 KB，留着才不会丢 | 很小 |
+| `public/gallery/<相册>/*.jpg`（导出的网页版） | **会**，网站就是靠它显示 | 每张约 130–260KB |
+| `public/gallery/<相册>/thumbs/*.jpg` | 会 | 每张约 25–50KB |
+
+也就是说：你丢一张 15MB 的原图进来，GitHub 上只会存那张缩到 1500px、约 200KB 的版本，
+15MB 的原图始终只在你自己电脑里。**原图请自己另外备份**（外置硬盘、Lightroom 目录等），
+git 不再是它的备份。
+
+因为原图只在本地，在别的电脑上（或者刚 clone 下来时）跑 `npm run photos`，脚本**不会**
+把找不到源文件的相册删掉，只会保持原样：
+
+```
+muriwai: sources not on this machine, keeping it as published
+```
+
+真要删掉一个相册，得把 `photos/<相册>/` 和 `public/gallery/<相册>/` 都删掉再跑脚本。
+
 ## 说明 / Notes
 
 - 这个文件夹存的是**源文件**；`public/gallery/` 里是脚本生成的网页版本，别手动改，
   跑一次脚本就会被覆盖。
-- `src/data/albums.json` 也是生成的，同理别手动改。
+- `src/data/albums.json` 也是生成的，同理别手动改。它里面也存了一份说明文字，
+  所以万一 `album.json` 丢了还能从这里找回来。
 - 照片的排版、灯箱、样式在 `src/components/Gallery.tsx` 和 `src/styles.css` 里，
   只有想改**外观**的时候才需要动它们。

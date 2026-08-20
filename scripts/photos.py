@@ -12,6 +12,12 @@ Exports are made with Pillow, which drops EXIF on the way out — the
 published files carry no GPS or camera serial. Photos already exported
 are skipped unless the source is newer or --force is passed, so repeated
 runs don't quietly recompress the same image over and over.
+
+The originals in photos/ are gitignored and live only on this machine,
+so a checkout elsewhere has the exported copies but not the sources.
+Albums whose sources are missing are therefore left exactly as they were
+published rather than dropped — deleting an album means deleting its
+folder under public/gallery/ as well.
 """
 
 import json
@@ -147,19 +153,40 @@ def build_album(album_dir):
     }
 
 
+def already_published():
+    """Albums from the last run, so a machine without the sources keeps them."""
+    if not DATA.exists():
+        return {}
+    return {album['id']: album for album in json.loads(DATA.read_text(encoding='utf-8'))}
+
+
 def main():
-    if not SOURCES.exists():
-        sys.exit(f'No photos folder at {SOURCES}. Create it and put an album folder inside.')
+    album_dirs = []
+    if SOURCES.exists():
+        album_dirs = [p for p in SOURCES.iterdir() if p.is_dir() and not p.name.startswith('.')]
 
-    album_dirs = sorted(
-        (p for p in SOURCES.iterdir() if p.is_dir() and not p.name.startswith('.')),
-        key=lambda p: p.name.lower(),
-        reverse=True,  # newest album first, so name folders like 2026-07-rangitoto
-    )
-    if not album_dirs:
-        sys.exit(f'No album folders in {SOURCES.relative_to(ROOT)}/. Make one, e.g. photos/rangitoto/.')
+    built = {}
+    for album_dir in sorted(album_dirs, key=lambda p: p.name.lower(), reverse=True):
+        album = build_album(album_dir)
+        if album:
+            built[album['id']] = album
 
-    albums = [album for album in (build_album(d) for d in album_dirs) if album]
+    # An album with no sources here is still published if its exported files
+    # are in place; only one whose folder is gone drops out of the gallery.
+    for album_id, album in already_published().items():
+        if album_id in built:
+            continue
+        if (PUBLISHED / album_id).is_dir():
+            built[album_id] = album
+            print(f'{album_id}: sources not on this machine, keeping it as published')
+        else:
+            print(f'{album_id}: sources and public/gallery/{album_id}/ are both gone, removing it')
+
+    if not built:
+        print(f'\nNo albums. Put photos in {SOURCES.relative_to(ROOT)}/<album>/ and run this again.')
+
+    # Newest first — name album folders like 2026-07-rangitoto to control this.
+    albums = [built[key] for key in sorted(built, key=str.lower, reverse=True)]
     DATA.write_text(json.dumps(albums, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     total = sum(len(album['photos']) for album in albums)
     print(f'\nWrote {DATA.relative_to(ROOT)}: {len(albums)} album(s), {total} photos.')
