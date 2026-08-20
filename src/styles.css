@@ -45,6 +45,12 @@
   box-sizing: border-box;
 }
 
+/* Reserve the scrollbar's space, so locking the page while the lightbox is
+   open doesn't shift everything sideways where scrollbars take up room. */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   margin: 0;
   min-width: 320px;
