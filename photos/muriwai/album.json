@@ -1,0 +1,56 @@
+{
+  "place": { "en": "Muriwai, Auckland", "zh": "奥克兰 Muriwai" },
+  "date": { "en": "October 2025", "zh": "2025 年 10 月" },
+  "camera": "Canon EOS 800D",
+  "photos": [
+    {
+      "file": "01-road-west.jpg",
+      "caption": {
+        "en": "The road out west, through the windscreen",
+        "zh": "往西开的路上,透过挡风玻璃"
+      }
+    },
+    {
+      "file": "02-sheltered-water.jpg",
+      "caption": {
+        "en": "Sheltered water on the way to the coast",
+        "zh": "去海边路上一处平静的水湾"
+      }
+    },
+    {
+      "file": "03-tree-over-bay.jpg",
+      "caption": {
+        "en": "An old tree leaning over the bay",
+        "zh": "一棵斜倚在海湾边的老树"
+      }
+    },
+    {
+      "file": "04-black-sand-from-ridge.jpg",
+      "caption": {
+        "en": "First sight of the black sand from the ridge",
+        "zh": "从山脊上第一次看到黑沙滩"
+      }
+    },
+    {
+      "file": "05-beach-below-lookout.jpg",
+      "caption": {
+        "en": "The beach curving away below the lookout",
+        "zh": "观景台下方一路弯过去的海岸线"
+      }
+    },
+    {
+      "file": "06-rock-at-beach-end.jpg",
+      "caption": {
+        "en": "The rock standing at the end of the beach",
+        "zh": "立在海滩尽头的那块礁岩"
+      }
+    },
+    {
+      "file": "07-flax-in-the-wind.jpg",
+      "caption": {
+        "en": "Flax in the wind, the Tasman Sea behind it",
+        "zh": "风里的亚麻草,身后是塔斯曼海"
+      }
+    }
+  ]
+}
