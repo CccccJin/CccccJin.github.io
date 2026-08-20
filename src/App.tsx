@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { LocaleContext, ui, type Locale } from './i18n'
 import { Footer } from './components/Footer'
+import { Gallery } from './components/Gallery'
 import { Header } from './components/Header'
 import { ProjectCard } from './components/ProjectCard'
 import { Section } from './components/Section'
@@ -62,6 +63,12 @@ function App() {
                 <ProjectCard key={project.title.en} project={project} />
               ))}
             </div>
+          </Section>
+
+          <hr />
+
+          <Section id="gallery" title={ui.gallery[locale]}>
+            <Gallery />
           </Section>
         </main>
 

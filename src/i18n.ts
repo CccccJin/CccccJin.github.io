@@ -15,6 +15,18 @@ export function useLocale(): Locale {
 export const ui = {
   news: { en: 'News', zh: '近况' },
   projects: { en: 'Projects', zh: '项目' },
+  gallery: { en: 'Gallery', zh: '相册' },
+  galleryIntro: {
+    en: 'Photographs I take when I am away from the screen — mostly the coast around Auckland.',
+    zh: '离开屏幕之后随手拍的照片,大多是奥克兰附近的海岸。',
+  },
+  photosCount: { en: 'photos', zh: '张' },
+  lightboxLabel: { en: 'Photo viewer', zh: '照片查看' },
+  /** Between a photo's caption and its place, punctuated per language. */
+  captionJoin: { en: ', ', zh: ',' },
+  close: { en: 'Close', zh: '关闭' },
+  previous: { en: 'Previous photo', zh: '上一张' },
+  next: { en: 'Next photo', zh: '下一张' },
   stack: { en: 'Stack:', zh: '技术栈:' },
   emailLine: {
     en: 'Email: che917 [AT] aucklanduni.ac.nz',

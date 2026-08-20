@@ -297,6 +297,195 @@ strong {
 }
 
 /* ---------------------------------------------------------------------------
+   Gallery (album grid + lightbox, after zhiningliu.com's gallery)
+--------------------------------------------------------------------------- */
+.gallery-intro {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.album + .album {
+  margin-top: 28px;
+}
+
+.album-meta {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.album-meta strong {
+  color: var(--text);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.photo-tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f2f2f2;
+  font: inherit;
+  cursor: zoom-in;
+}
+
+.photo-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* The label sits on the photo the way the reference gallery captions its
+   tiles, but stays out of the way until the tile is hovered or focused. */
+.photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 18px 8px 6px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  color: #ffffff;
+  font-size: 12.5px;
+  line-height: 1.3;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.photo-tile:hover .photo-caption,
+.photo-tile:focus-visible .photo-caption {
+  opacity: 1;
+}
+
+.photo-tile:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* Touch screens have no hover to reveal the caption with. */
+@media (hover: none) {
+  .photo-caption {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-caption {
+    transition: none;
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  max-width: min(96vw, 1150px);
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.84);
+}
+
+.lightbox-inner {
+  position: relative;
+  padding: 12px;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.lightbox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(94vh - 96px);
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-caption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  padding: 0 10px;
+  border: 0;
+  background: none;
+  color: #ffffff;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: -40px;
+  right: -6px;
+  font-size: 30px;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 44px;
+}
+
+.lightbox-nav.prev {
+  left: -62px;
+}
+
+.lightbox-nav.next {
+  right: -62px;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  color: var(--link-hover);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* No room outside the frame on small screens, so the controls move onto it. */
+@media (max-width: 899px) {
+  .lightbox-nav {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 999px;
+  }
+
+  .lightbox-nav.prev {
+    left: 18px;
+  }
+
+  .lightbox-nav.next {
+    right: 18px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Footer
 --------------------------------------------------------------------------- */
 .site-footer {
@@ -358,5 +547,10 @@ strong {
 
   .bio p {
     text-align: left;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 }
