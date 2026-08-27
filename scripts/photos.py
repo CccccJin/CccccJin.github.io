@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageOps
 except ImportError:
     sys.exit('Pillow is missing. Install it with:  python3 -m pip install Pillow')
 
@@ -96,7 +96,10 @@ def export(source, target, long_edge, quality):
             return done.size, False
 
     with Image.open(source) as image:
-        copy = image.convert('RGB')
+        # A photo off a phone stores its rotation as an EXIF tag rather than in
+        # the pixels. Exporting strips EXIF, so bake the rotation in first or
+        # the published copy comes out sideways.
+        copy = ImageOps.exif_transpose(image).convert('RGB')
         copy.thumbnail((long_edge, long_edge), Image.LANCZOS)
         target.parent.mkdir(parents=True, exist_ok=True)
         copy.save(target, 'JPEG', quality=quality, optimize=True, progressive=True)

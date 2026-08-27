@@ -156,6 +156,12 @@ export function Gallery() {
 
   const isOpen = shown !== null
   const current = shown ? photos[shown.indexes[shown.position]] : null
+  // Captions are optional: an album can be photographs and nothing else, and
+  // an uncaptioned photo is described by its place alone rather than by a
+  // dangling comma.
+  const described = current
+    ? [current.caption[locale], current.place[locale]].filter(Boolean).join(ui.captionJoin[locale])
+    : ''
 
   const shownPlaces = useMemo(() => places.slice(0, visiblePlaces), [visiblePlaces])
   // Opening any card walks the whole set of places on screen, not just that one.
@@ -372,12 +378,15 @@ export function Gallery() {
               ]
                 .filter(Boolean)
                 .join(', ')
+              const spoken = [photo.caption[locale], label]
+                .filter(Boolean)
+                .join(ui.captionJoin[locale])
               return (
                 <li key={photo.src}>
                   <button
                     type="button"
                     className="gallery-item"
-                    aria-label={`${photo.caption[locale]}${ui.captionJoin[locale]}${label}`}
+                    aria-label={spoken}
                     onClick={() => setShown({ indexes: photoIndexes, position: index })}
                   >
                     <img
@@ -454,7 +463,7 @@ export function Gallery() {
               ref={imageRef}
               className={portrait ? 'lightbox-image portrait' : 'lightbox-image'}
               src={current.src}
-              alt={current.caption[locale]}
+              alt={described}
               onTouchStart={startSwipe}
               onTouchEnd={endSwipe}
             />
@@ -469,9 +478,8 @@ export function Gallery() {
             </button>
 
             <p className="lightbox-caption">
-              {shown.position + 1} / {shown.indexes.length} — {current.caption[locale]}
-              {ui.captionJoin[locale]}
-              {current.place[locale]}
+              {shown.position + 1} / {shown.indexes.length}
+              {described && ` — ${described}`}
             </p>
           </>
         )}

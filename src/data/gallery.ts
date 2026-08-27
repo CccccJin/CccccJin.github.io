@@ -43,8 +43,10 @@ export type GalleryPhoto = Photo & {
   region: Localized
   date: Localized
   camera: string
-  /** Taken from the album's date; null when the date names no year. */
+  /** Taken from the album's date; null unless the date names one single year. */
   year: number | null
+  /** Every year the album's date names, oldest first. */
+  years: number[]
 }
 
 /** Every photo of one place, however many shoots it took. */
@@ -72,9 +74,13 @@ function splitPlace(place: Localized): { city: Localized; region: Localized } {
   return { city, region }
 }
 
-function yearOf(date: Localized): number | null {
-  const match = date.en.match(/\d{4}/) ?? date.zh.match(/\d{4}/)
-  return match ? Number(match[0]) : null
+/**
+ * Every distinct year the album's date names, oldest first. A set gathered
+ * over several years says so — "2020 – 2024" — and names two.
+ */
+function yearsOf(date: Localized): number[] {
+  const named = date.en.match(/\d{4}/g) ?? date.zh.match(/\d{4}/g) ?? []
+  return [...new Set(named.map(Number))].sort((a, b) => a - b)
 }
 
 /** Falls back per locale, so filling in only the English half still works. */
@@ -91,7 +97,7 @@ export const photos: GalleryPhoto[] = albums.flatMap((album) => {
   const split = splitPlace(album.place)
   const city = orElse(album.city, split.city)
   const region = orElse(album.region, split.region)
-  const year = yearOf(album.date)
+  const years = yearsOf(album.date)
   return album.photos.map((photo) => ({
     ...photo,
     albumId: album.id,
@@ -100,7 +106,10 @@ export const photos: GalleryPhoto[] = albums.flatMap((album) => {
     region,
     date: album.date,
     camera: album.camera,
-    year,
+    // A date spanning years names no one year for a photo, so its tile is
+    // labelled with the place alone rather than picking the range's first.
+    year: years.length === 1 ? years[0] : null,
+    years,
   }))
 })
 
@@ -119,7 +128,9 @@ export const places: Place[] = (() => {
       grouped.set(key, place)
     }
     place.indexes.push(index)
-    if (photo.year !== null && !place.years.includes(photo.year)) place.years.push(photo.year)
+    for (const year of photo.years) {
+      if (!place.years.includes(year)) place.years.push(year)
+    }
   })
 
   for (const place of grouped.values()) place.years.sort((a, b) => a - b)
