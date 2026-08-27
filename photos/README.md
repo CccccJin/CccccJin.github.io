@@ -41,8 +41,11 @@ npm run photos
 ```json
 {
   "place": { "en": "Muriwai, Auckland", "zh": "奥克兰 Muriwai" },
+  "city": { "en": "Muriwai", "zh": "Muriwai" },
+  "region": { "en": "Auckland", "zh": "奥克兰" },
   "date": { "en": "October 2025", "zh": "2025 年 10 月" },
   "camera": "Canon EOS 800D",
+  "cover": "04-black-sand-from-ridge.jpg",
   "photos": [
     {
       "file": "01-road-west.jpg",
@@ -55,8 +58,11 @@ npm run photos
 }
 ```
 
-- `place` / `date` / `caption` 都要中英文各写一份 —— 中文那份网站切到中文时才会显示。
-  中文说明是**单独写的**，不用照着英文翻译。
+- `place` / `city` / `region` / `date` / `caption` 都要中英文各写一份 —— 中文那份网站切到
+  中文时才会显示。中文说明是**单独写的**，不用照着英文翻译。
+- `city` 是「地点」视图里那张卡片上的大字，`region` 是它下面的小字。留空的话会自动拿
+  `place` 逗号前后两半来顶上，所以只填 `place` 也能用，只是不一定断得好看。
+- `cover` 是「地点」卡片用哪张照片当封面，填文件名就行。留空就用相册第一张。
 - `caption` 同时是图片的 `alt` 文字，读屏软件会读它，所以写一句人话就好。
 - 改完再跑一次 `npm run photos`。
 
@@ -65,6 +71,7 @@ npm run photos
 | 想做什么 | 怎么做 |
 | --- | --- |
 | 加照片 | 丢进相册文件夹 → `npm run photos` → 在 `album.json` 里填说明 |
+| 换地点卡片的封面 | 在 `album.json` 里把 `cover` 改成想用的文件名 |
 | 删照片 | 从相册文件夹里删掉 → `npm run photos`（已发布的副本会一起清掉） |
 | 改顺序 | 改文件名前面的数字，或直接调整 `album.json` 里 `photos` 数组的顺序 |
 | 加新相册 | 新建一个 `photos/<名字>/` 文件夹，重复上面三步 |
@@ -110,5 +117,7 @@ muriwai: sources not on this machine, keeping it as published
   跑一次脚本就会被覆盖。
 - `src/data/albums.json` 也是生成的，同理别手动改。它里面也存了一份说明文字，
   所以万一 `album.json` 丢了还能从这里找回来。
+- 同一个 `city` 的多个相册，在「地点」视图里会合成一张卡片，年份显示成区间；卡片封面取
+  最新那个相册的 `cover`。
 - 照片的排版、灯箱、样式在 `src/components/Gallery.tsx` 和 `src/styles.css` 里，
   只有想改**外观**的时候才需要动它们。

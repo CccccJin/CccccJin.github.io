@@ -3,8 +3,8 @@
 Turns the photos/ folder into the gallery. Run: npm run photos
 
 Everything the gallery shows comes from photos/<album>/: the images
-themselves and an album.json holding the place, date, camera, and one
-caption per photo. This script exports web-sized copies into
+themselves and an album.json holding the place, date, camera, cover, and
+one caption per photo. This script exports web-sized copies into
 public/gallery/ and writes src/data/albums.json for the site to read, so
 adding photos never means editing code.
 
@@ -64,17 +64,24 @@ def load_album_json(album_dir, files):
     that have already been written.
     """
     path = album_dir / 'album.json'
-    if path.exists():
-        album = json.loads(path.read_text(encoding='utf-8'))
-    else:
-        album = {'place': blank_localized(), 'date': blank_localized(), 'camera': ''}
+    album = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
 
     listed = {entry['file']: entry for entry in album.get('photos', [])}
     names = [p.name for p in files]
     photos = [listed[name] for name in (e['file'] for e in album.get('photos', [])) if name in names]
     photos += [{'file': name, 'caption': blank_localized()} for name in names if name not in listed]
 
-    updated = {**album, 'photos': photos}
+    # Every field the site can use, in a fixed order, so a new album.json opens
+    # with the whole form to fill in rather than half of it.
+    scaffold = {
+        'place': blank_localized(),
+        'city': blank_localized(),
+        'region': blank_localized(),
+        'date': blank_localized(),
+        'camera': '',
+        'cover': '',
+    }
+    updated = {**scaffold, **album, 'photos': photos}
     if updated != album or not path.exists():
         path.write_text(json.dumps(updated, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print(f'  wrote {path.relative_to(ROOT)}')
@@ -144,11 +151,23 @@ def build_album(album_dir):
     if not album.get('place', {}).get('en'):
         print(f'  note: {album_dir.name}/album.json still needs a place and date')
 
+    # The gallery leads a place card with its cover; the file is named by its
+    # source, so point at the exported copy the site will actually load.
+    cover = album.get('cover') or ''
+    if cover:
+        cover = Path(cover).stem + '.jpg'
+        if cover not in {Path(p['src']).name for p in photos}:
+            print(f'  note: cover {album.get("cover")} is not in the album, using the first photo')
+            cover = ''
+
     return {
         'id': album_dir.name,
         'place': album.get('place') or blank_localized(),
+        'city': album.get('city') or blank_localized(),
+        'region': album.get('region') or blank_localized(),
         'date': album.get('date') or blank_localized(),
         'camera': album.get('camera', ''),
+        'cover': cover,
         'photos': photos,
     }
 

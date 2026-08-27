@@ -1,7 +1,22 @@
 {
-  "place": { "en": "Muriwai, Auckland", "zh": "奥克兰 Muriwai" },
-  "date": { "en": "October 2025", "zh": "2025 年 10 月" },
+  "place": {
+    "en": "Muriwai, Auckland",
+    "zh": "奥克兰 Muriwai"
+  },
+  "city": {
+    "en": "Muriwai",
+    "zh": "Muriwai"
+  },
+  "region": {
+    "en": "Auckland",
+    "zh": "奥克兰"
+  },
+  "date": {
+    "en": "October 2025",
+    "zh": "2025 年 10 月"
+  },
   "camera": "Canon EOS 800D",
+  "cover": "04-black-sand-from-ridge.jpg",
   "photos": [
     {
       "file": "01-road-west.jpg",

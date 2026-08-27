@@ -67,9 +67,7 @@ function App() {
 
           <hr />
 
-          <Section id="gallery" title={ui.gallery[locale]}>
-            <Gallery />
-          </Section>
+          <Gallery />
         </main>
 
         <Footer />

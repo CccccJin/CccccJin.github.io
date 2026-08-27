@@ -20,7 +20,9 @@ export const ui = {
     en: 'Photographs I take when I am away from the screen — mostly the coast around Auckland.',
     zh: '离开屏幕之后随手拍的照片,大多是奥克兰附近的海岸。',
   },
-  photosCount: { en: 'photos', zh: '张' },
+  galleryView: { en: 'Gallery view', zh: '相册视图' },
+  byLocation: { en: 'Location', zh: '地点' },
+  byTime: { en: 'Time', zh: '时间' },
   lightboxLabel: { en: 'Photo viewer', zh: '照片查看' },
   /** Between a photo's caption and its place, punctuated per language. */
   captionJoin: { en: ', ', zh: ',' },
@@ -37,3 +39,23 @@ export const ui = {
   footerSite: { en: 'Jon Barron’s website', zh: 'Jon Barron 的主页' },
   footerUpdated: { en: 'Last updated', zh: '最后更新' },
 } satisfies Record<string, Localized>
+
+/** UI strings with a number spliced in, kept apart from the flat `ui` above. */
+export const count = {
+  photos: {
+    en: (n: number) => `${n} ${n === 1 ? 'photo' : 'photos'}`,
+    zh: (n: number) => `${n} 张`,
+  },
+  showMore: {
+    en: (batch: number, left: number) => `Show ${batch} more (${left} remaining)`,
+    zh: (batch: number, left: number) => `再看 ${batch} 张(还剩 ${left} 张)`,
+  },
+  showAllPhotos: {
+    en: (n: number) => `Show all ${n} photos`,
+    zh: (n: number) => `显示全部 ${n} 张`,
+  },
+  showAllPlaces: {
+    en: (n: number) => `Show all ${n} places`,
+    zh: (n: number) => `显示全部 ${n} 个地点`,
+  },
+}
