@@ -18,11 +18,40 @@
   "camera": "Canon EOS 800D, iPhone 13 Pro Max",
   "cover": "02.jpg",
   "photos": [
-    { "file": "01.jpg", "caption": { "en": "", "zh": "" } },
-    { "file": "02.jpg", "caption": { "en": "", "zh": "" } },
-    { "file": "03.jpg", "caption": { "en": "", "zh": "" } },
-    { "file": "04.jpg", "caption": { "en": "", "zh": "" } },
-    { "file": "05.jpg", "caption": { "en": "", "zh": "" } },
-    { "file": "06.jpg", "caption": { "en": "", "zh": "" } }
+    {
+      "file": "01.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "02.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "03.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "04.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "06.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    }
   ]
 }

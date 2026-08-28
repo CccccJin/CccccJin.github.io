@@ -61,16 +61,6 @@
         }
       },
       {
-        "src": "./gallery/ponyu/05.jpg",
-        "thumb": "./gallery/ponyu/thumbs/05.jpg",
-        "width": 1125,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
         "src": "./gallery/ponyu/06.jpg",
         "thumb": "./gallery/ponyu/thumbs/06.jpg",
         "width": 1500,
@@ -83,14 +73,14 @@
     ]
   },
   {
-    "id": "muriwai",
+    "id": "omanawanui",
     "place": {
-      "en": "Muriwai, Auckland",
-      "zh": "奥克兰 Muriwai"
+      "en": "Omanawanui, Auckland",
+      "zh": "奥克兰 Omanawanui"
     },
     "city": {
-      "en": "Muriwai",
-      "zh": "Muriwai"
+      "en": "Omanawanui",
+      "zh": "Omanawanui"
     },
     "region": {
       "en": "Auckland",
@@ -104,73 +94,73 @@
     "cover": "04-black-sand-from-ridge.jpg",
     "photos": [
       {
-        "src": "./gallery/muriwai/01-road-west.jpg",
-        "thumb": "./gallery/muriwai/thumbs/01-road-west.jpg",
+        "src": "./gallery/omanawanui/01-road-west.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/01-road-west.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "The road out west, through the windscreen",
-          "zh": "往西开的路上,透过挡风玻璃"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/02-sheltered-water.jpg",
-        "thumb": "./gallery/muriwai/thumbs/02-sheltered-water.jpg",
+        "src": "./gallery/omanawanui/02-sheltered-water.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/02-sheltered-water.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "Sheltered water on the way to the coast",
-          "zh": "去海边路上一处平静的水湾"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/03-tree-over-bay.jpg",
-        "thumb": "./gallery/muriwai/thumbs/03-tree-over-bay.jpg",
+        "src": "./gallery/omanawanui/03-tree-over-bay.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/03-tree-over-bay.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "An old tree leaning over the bay",
-          "zh": "一棵斜倚在海湾边的老树"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/04-black-sand-from-ridge.jpg",
-        "thumb": "./gallery/muriwai/thumbs/04-black-sand-from-ridge.jpg",
+        "src": "./gallery/omanawanui/04-black-sand-from-ridge.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/04-black-sand-from-ridge.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "First sight of the black sand from the ridge",
-          "zh": "从山脊上第一次看到黑沙滩"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/05-beach-below-lookout.jpg",
-        "thumb": "./gallery/muriwai/thumbs/05-beach-below-lookout.jpg",
+        "src": "./gallery/omanawanui/05-beach-below-lookout.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/05-beach-below-lookout.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "The beach curving away below the lookout",
-          "zh": "观景台下方一路弯过去的海岸线"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/06-rock-at-beach-end.jpg",
-        "thumb": "./gallery/muriwai/thumbs/06-rock-at-beach-end.jpg",
+        "src": "./gallery/omanawanui/06-rock-at-beach-end.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/06-rock-at-beach-end.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "The rock standing at the end of the beach",
-          "zh": "立在海滩尽头的那块礁岩"
+          "en": "",
+          "zh": ""
         }
       },
       {
-        "src": "./gallery/muriwai/07-flax-in-the-wind.jpg",
-        "thumb": "./gallery/muriwai/thumbs/07-flax-in-the-wind.jpg",
+        "src": "./gallery/omanawanui/07-flax-in-the-wind.jpg",
+        "thumb": "./gallery/omanawanui/thumbs/07-flax-in-the-wind.jpg",
         "width": 1500,
         "height": 1000,
         "caption": {
-          "en": "Flax in the wind, the Tasman Sea behind it",
-          "zh": "风里的亚麻草,身后是塔斯曼海"
+          "en": "",
+          "zh": ""
         }
       }
     ]

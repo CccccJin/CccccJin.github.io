@@ -1,0 +1,71 @@
+{
+  "place": {
+    "en": "Omanawanui, Auckland",
+    "zh": "奥克兰 Omanawanui"
+  },
+  "city": {
+    "en": "Omanawanui",
+    "zh": "Omanawanui"
+  },
+  "region": {
+    "en": "Auckland",
+    "zh": "奥克兰"
+  },
+  "date": {
+    "en": "October 2025",
+    "zh": "2025 年 10 月"
+  },
+  "camera": "Canon EOS 800D",
+  "cover": "04-black-sand-from-ridge.jpg",
+  "photos": [
+    {
+      "file": "01-road-west.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "02-sheltered-water.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "03-tree-over-bay.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "04-black-sand-from-ridge.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "05-beach-below-lookout.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "06-rock-at-beach-end.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "07-flax-in-the-wind.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    }
+  ]
+}

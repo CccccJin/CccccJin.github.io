@@ -17,8 +17,8 @@ export const ui = {
   projects: { en: 'Projects', zh: '项目' },
   gallery: { en: 'Gallery', zh: '相册' },
   galleryIntro: {
-    en: 'Photographs I take when I am away from the screen — mostly the coast around Auckland.',
-    zh: '离开屏幕之后随手拍的照片,大多是奥克兰附近的海岸。',
+    en: 'Photographs I take when I am away from the screen.',
+    zh: '离开屏幕之后随手拍的照片。',
   },
   galleryView: { en: 'Gallery view', zh: '相册视图' },
   byLocation: { en: 'Location', zh: '地点' },
