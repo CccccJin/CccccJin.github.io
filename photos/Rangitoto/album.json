@@ -1,0 +1,64 @@
+{
+  "place": {
+    "en": "",
+    "zh": ""
+  },
+  "city": {
+    "en": "",
+    "zh": ""
+  },
+  "region": {
+    "en": "",
+    "zh": ""
+  },
+  "date": {
+    "en": "",
+    "zh": ""
+  },
+  "camera": "",
+  "cover": "",
+  "photos": [
+    {
+      "file": "IMG_0898.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0906.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0946.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0950.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0957.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0959.JPG",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    }
+  ]
+}

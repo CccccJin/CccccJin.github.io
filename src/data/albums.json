@@ -1,5 +1,88 @@
 [
   {
+    "id": "Rangitoto",
+    "place": {
+      "en": "",
+      "zh": ""
+    },
+    "city": {
+      "en": "",
+      "zh": ""
+    },
+    "region": {
+      "en": "",
+      "zh": ""
+    },
+    "date": {
+      "en": "",
+      "zh": ""
+    },
+    "camera": "",
+    "cover": "",
+    "photos": [
+      {
+        "src": "./gallery/Rangitoto/IMG_0898.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0898.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0906.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0906.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0946.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0946.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0950.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0950.jpg",
+        "width": 1000,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0957.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0957.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0959.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0959.jpg",
+        "width": 1125,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  {
     "id": "ponyu",
     "place": {
       "en": "Ponyu",
