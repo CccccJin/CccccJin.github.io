@@ -42,3 +42,6 @@ dist-ssr
 # private analytics credentials
 .stats.env
 .wrangler/
+
+# python bytecode from scripts/
+__pycache__/

@@ -17,7 +17,7 @@ photos/
     01-Mercer Bay.jpg          ← 先按地点名排，再按数字排
     02-Mercer Bay.jpg
     01-Omanawanui.jpg
-  2026-07-rangitoto/           ← 想控制相册顺序就用日期开头（新的排前面）
+  rangitoto/                   ← 相册排第几，看 album.json 里的 order
     01-ferry.jpg
 ```
 
@@ -27,7 +27,8 @@ photos/
 - 支持 `.jpg` / `.jpeg` / `.png`。HEIC 和 CR2 不支持，先用「预览」或 Lightroom 导出成 JPEG。
 - **原图多大都行**（几十 MB 也没问题），脚本会缩小。原图只留在这台电脑上，不会进 git、
   也不会上传到 GitHub —— 见下面「原图不会上云」。
-- 相册文件夹按名字**倒序**排列（新的在上面），所以想排序就用 `2026-07-...` 这种命名。
+- 相册之间的顺序在 `album.json` 里的 `order` 决定：**数字小的排前面**，1 就是永远置顶。
+  没填 `order` 的相册排在填了的后面，按文件夹名倒序（新的在上面）。
 
 **2. 跑一下脚本 / Run the script**
 
@@ -53,6 +54,7 @@ npm run photos
   "date": { "en": "October 2025", "zh": "2025 年 10 月" },
   "camera": "Canon EOS 800D",
   "cover": "04-black-sand-from-ridge.jpg",
+  "order": 3,
   "photos": [
     {
       "file": "01-road-west.jpg",
@@ -70,6 +72,8 @@ npm run photos
 - `city` 是「地点」视图里那张卡片上的大字，`region` 是它下面的小字。留空的话会自动拿
   `place` 逗号前后两半来顶上，所以只填 `place` 也能用，只是不一定断得好看。
 - `cover` 是「地点」卡片用哪张照片当封面，填文件名就行。留空就用相册第一张。
+- `order` 是这个相册在 Gallery 里排第几，从 1 开始。想插一个相册到中间，把后面那些的
+  `order` 往后挪一位就行。
 - `caption` 同时是图片的 `alt` 文字，读屏软件会读它，所以写一句人话就好。一个相册里有
   好几个地点的话，把地点名写进 `caption` 最省事 —— 灯箱里就会显示这张是哪儿拍的。
 - 说明可以整个相册都留空 —— 想做一个只有照片、不配文字的相册（比如 `ponyu`）就这么办，
@@ -84,7 +88,8 @@ npm run photos
 | 换地点卡片的封面 | 在 `album.json` 里把 `cover` 改成想用的文件名 |
 | 删照片 | 从相册文件夹里删掉 → `npm run photos`（已发布的副本会一起清掉） |
 | 改顺序 | 改文件名 —— 先按「数字-地点」里的地点排，再按数字排（`album.json` 里的顺序每次跑脚本都会照文件名重排） |
-| 加新相册 | 新建一个 `photos/<名字>/` 文件夹，重复上面三步 |
+| 改相册之间的顺序 | 改各个 `album.json` 里的 `order` |
+| 加新相册 | 新建一个 `photos/<名字>/` 文件夹，重复上面三步，再填一个 `order` |
 | 删整个相册 | 删掉 `photos/<名字>/` 和 `public/gallery/<名字>/`，再跑一次脚本 |
 | 重新导出全部 | `npm run photos -- --force`（改了脚本里的尺寸/质量时用） |
 

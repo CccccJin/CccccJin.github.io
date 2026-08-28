@@ -96,6 +96,7 @@ def load_album_json(album_dir, files):
         'date': blank_localized(),
         'camera': '',
         'cover': '',
+        'order': None,
     }
     updated = {**scaffold, **album, 'photos': photos}
     if updated != album or not path.exists():
@@ -181,6 +182,9 @@ def build_album(album_dir):
 
     return {
         'id': album_dir.name,
+        # Kept in the generated data too, so a checkout without the sources
+        # rebuilds the gallery in the same order it was published in.
+        'order': album.get('order'),
         'place': album.get('place') or blank_localized(),
         'city': album.get('city') or blank_localized(),
         'region': album.get('region') or blank_localized(),
@@ -196,6 +200,20 @@ def already_published():
     if not DATA.exists():
         return {}
     return {album['id']: album for album in json.loads(DATA.read_text(encoding='utf-8'))}
+
+
+def in_order(albums):
+    """
+    The order the gallery reads top to bottom. An album.json with an `order`
+    is placed by that number, lowest first — which is how a set stays pinned
+    to the top however it is named. The rest follow, newest folder name first,
+    so an album added without an order still lands sensibly.
+    """
+    placed = [album for album in albums if album.get('order') is not None]
+    rest = [album for album in albums if album.get('order') is None]
+    placed.sort(key=lambda album: (album['order'], album['id'].lower()))
+    rest.sort(key=lambda album: album['id'].lower(), reverse=True)
+    return placed + rest
 
 
 def main():
@@ -223,8 +241,7 @@ def main():
     if not built:
         print(f'\nNo albums. Put photos in {SOURCES.relative_to(ROOT)}/<album>/ and run this again.')
 
-    # Newest first — name album folders like 2026-07-rangitoto to control this.
-    albums = [built[key] for key in sorted(built, key=str.lower, reverse=True)]
+    albums = in_order(built.values())
     DATA.write_text(json.dumps(albums, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     total = sum(len(album['photos']) for album in albums)
     print(f'\nWrote {DATA.relative_to(ROOT)}: {len(albums)} album(s), {total} photos.')

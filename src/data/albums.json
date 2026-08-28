@@ -1,6 +1,175 @@
 [
   {
+    "id": "ponyu",
+    "order": 1,
+    "place": {
+      "en": "Ponyu",
+      "zh": "Ponyu"
+    },
+    "city": {
+      "en": "Ponyu",
+      "zh": "Ponyu"
+    },
+    "region": {
+      "en": "",
+      "zh": ""
+    },
+    "date": {
+      "en": "2020 – 2024",
+      "zh": "2020 – 2024 年"
+    },
+    "camera": "Canon EOS 800D, iPhone 13 Pro Max",
+    "cover": "02.jpg",
+    "photos": [
+      {
+        "src": "./gallery/ponyu/01.jpg",
+        "thumb": "./gallery/ponyu/thumbs/01.jpg",
+        "width": 1000,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/ponyu/02.jpg",
+        "thumb": "./gallery/ponyu/thumbs/02.jpg",
+        "width": 1500,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/ponyu/03.jpg",
+        "thumb": "./gallery/ponyu/thumbs/03.jpg",
+        "width": 1500,
+        "height": 1125,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/ponyu/04.jpg",
+        "thumb": "./gallery/ponyu/thumbs/04.jpg",
+        "width": 1500,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/ponyu/06.jpg",
+        "thumb": "./gallery/ponyu/thumbs/06.jpg",
+        "width": 1500,
+        "height": 1386,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "Rangitoto",
+    "order": 2,
+    "place": {
+      "en": "Rangitoto, Auckland",
+      "zh": "奥克兰 Rangitoto"
+    },
+    "city": {
+      "en": "Rangitoto",
+      "zh": "Rangitoto"
+    },
+    "region": {
+      "en": "Auckland",
+      "zh": "奥克兰"
+    },
+    "date": {
+      "en": "July 2026",
+      "zh": "2026 年 7 月"
+    },
+    "camera": "Canon EOS 800D",
+    "cover": "IMG_0946.jpg",
+    "photos": [
+      {
+        "src": "./gallery/Rangitoto/IMG_0896.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0896.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0898.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0898.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0906.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0906.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0946.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0946.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0950.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0950.jpg",
+        "width": 1000,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0957.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0957.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Rangitoto/IMG_0959.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0959.jpg",
+        "width": 1125,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  {
     "id": "West Coast",
+    "order": 3,
     "place": {
       "en": "West Coast, Auckland",
       "zh": "奥克兰 西海岸"
@@ -154,6 +323,7 @@
   },
   {
     "id": "Shakespear Park",
+    "order": 4,
     "place": {
       "en": "Shakespear Park, Auckland",
       "zh": "奥克兰 Shakespear Park"
@@ -206,173 +376,8 @@
     ]
   },
   {
-    "id": "Rangitoto",
-    "place": {
-      "en": "Rangitoto, Auckland",
-      "zh": "奥克兰 Rangitoto"
-    },
-    "city": {
-      "en": "Rangitoto",
-      "zh": "Rangitoto"
-    },
-    "region": {
-      "en": "Auckland",
-      "zh": "奥克兰"
-    },
-    "date": {
-      "en": "July 2026",
-      "zh": "2026 年 7 月"
-    },
-    "camera": "Canon EOS 800D",
-    "cover": "IMG_0946.jpg",
-    "photos": [
-      {
-        "src": "./gallery/Rangitoto/IMG_0896.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0896.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0898.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0898.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0906.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0906.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0946.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0946.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0950.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0950.jpg",
-        "width": 1000,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0957.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0957.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/Rangitoto/IMG_0959.jpg",
-        "thumb": "./gallery/Rangitoto/thumbs/IMG_0959.jpg",
-        "width": 1125,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      }
-    ]
-  },
-  {
-    "id": "ponyu",
-    "place": {
-      "en": "Ponyu",
-      "zh": "Ponyu"
-    },
-    "city": {
-      "en": "Ponyu",
-      "zh": "Ponyu"
-    },
-    "region": {
-      "en": "",
-      "zh": ""
-    },
-    "date": {
-      "en": "2020 – 2024",
-      "zh": "2020 – 2024 年"
-    },
-    "camera": "Canon EOS 800D, iPhone 13 Pro Max",
-    "cover": "02.jpg",
-    "photos": [
-      {
-        "src": "./gallery/ponyu/01.jpg",
-        "thumb": "./gallery/ponyu/thumbs/01.jpg",
-        "width": 1000,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/ponyu/02.jpg",
-        "thumb": "./gallery/ponyu/thumbs/02.jpg",
-        "width": 1500,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/ponyu/03.jpg",
-        "thumb": "./gallery/ponyu/thumbs/03.jpg",
-        "width": 1500,
-        "height": 1125,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/ponyu/04.jpg",
-        "thumb": "./gallery/ponyu/thumbs/04.jpg",
-        "width": 1500,
-        "height": 1500,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/ponyu/06.jpg",
-        "thumb": "./gallery/ponyu/thumbs/06.jpg",
-        "width": 1500,
-        "height": 1386,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      }
-    ]
-  },
-  {
     "id": "Chrischurch",
+    "order": 5,
     "place": {
       "en": "Christchurch, Canterbury",
       "zh": "坎特伯雷 基督城"

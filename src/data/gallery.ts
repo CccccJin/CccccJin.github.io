@@ -13,6 +13,8 @@ export type Photo = {
 
 export type Album = {
   id: string
+  /** Where the album sits in the gallery, lowest first; null leaves it to the folder name. */
+  order?: number | null
   place: Localized
   /**
    * The place split for the location cards: `city` is the big line, `region`
@@ -30,8 +32,9 @@ export type Album = {
 }
 
 /**
- * One entry per shoot, newest first. Generated from the photos/ folder by
- * `npm run photos` — edit the album.json in there, not this file.
+ * One entry per shoot, in the order the gallery shows them. Generated from the
+ * photos/ folder by `npm run photos` — edit the album.json in there, not this
+ * file; `order` in it is what puts an album where it is.
  */
 export const albums: Album[] = albumData
 
@@ -92,7 +95,7 @@ function orElse(preferred: Localized | undefined, fallback: Localized): Localize
   }
 }
 
-/** Every photo in the gallery, newest album first, in album order within it. */
+/** Every photo in the gallery, album by album, in album order within each. */
 export const photos: GalleryPhoto[] = albums.flatMap((album) => {
   const split = splitPlace(album.place)
   const city = orElse(album.city, split.city)
@@ -114,8 +117,8 @@ export const photos: GalleryPhoto[] = albums.flatMap((album) => {
 })
 
 /**
- * The same photos grouped by place, in the order each place was last shot —
- * which, because `photos` is already newest first, is the order they appear.
+ * The same photos grouped by place, in the order their albums appear — a place
+ * takes the position of the first album that shot it.
  */
 export const places: Place[] = (() => {
   const grouped = new Map<string, Place>()
