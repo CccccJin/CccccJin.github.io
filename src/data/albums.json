@@ -2,24 +2,34 @@
   {
     "id": "Rangitoto",
     "place": {
-      "en": "",
-      "zh": ""
+      "en": "Rangitoto, Auckland",
+      "zh": "奥克兰 Rangitoto"
     },
     "city": {
-      "en": "",
-      "zh": ""
+      "en": "Rangitoto",
+      "zh": "Rangitoto"
     },
     "region": {
-      "en": "",
-      "zh": ""
+      "en": "Auckland",
+      "zh": "奥克兰"
     },
     "date": {
-      "en": "",
-      "zh": ""
+      "en": "July 2026",
+      "zh": "2026 年 7 月"
     },
-    "camera": "",
-    "cover": "",
+    "camera": "Canon EOS 800D",
+    "cover": "IMG_0946.jpg",
     "photos": [
+      {
+        "src": "./gallery/Rangitoto/IMG_0896.jpg",
+        "thumb": "./gallery/Rangitoto/thumbs/IMG_0896.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
       {
         "src": "./gallery/Rangitoto/IMG_0898.jpg",
         "thumb": "./gallery/Rangitoto/thumbs/IMG_0898.jpg",
