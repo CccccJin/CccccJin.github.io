@@ -1,0 +1,43 @@
+{
+  "place": {
+    "en": "Shakespear Park, Auckland",
+    "zh": "奥克兰 Shakespear Park"
+  },
+  "city": {
+    "en": "Shakespear Park",
+    "zh": "Shakespear Park"
+  },
+  "region": {
+    "en": "Auckland",
+    "zh": "奥克兰"
+  },
+  "date": {
+    "en": "September 2024",
+    "zh": "2024 年 9 月"
+  },
+  "camera": "Canon EOS 800D",
+  "cover": "IMG_0156.jpg",
+  "photos": [
+    {
+      "file": "IMG_0156.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0161.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "IMG_0183.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    }
+  ]
+}

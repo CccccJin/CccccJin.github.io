@@ -21,6 +21,7 @@ folder under public/gallery/ as well.
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -43,12 +44,27 @@ THUMB_SIZE, THUMB_QUALITY = 640, 76
 SUFFIXES = {'.jpg', '.jpeg', '.png'}
 FORCE = '--force' in sys.argv[1:]
 
+# A photo is named "<number>-<place>": 03-Mercer Bay.jpg. One folder can hold
+# several places that way, so the place is what sorts first.
+NAMED = re.compile(r'^(\d+)\s*[-_.]?\s*(.*)$')
+
+
+def photo_order(name):
+    """Sort by the place in the filename, then by the number counting within it."""
+    stem = Path(name).stem
+    named = NAMED.match(stem)
+    if not named:
+        # No leading number to read — IMG_0156.jpg and the like just sort by name.
+        return (stem.lower(), 0, stem.lower())
+    number, place = named.group(1), named.group(2).strip()
+    return (place.lower(), int(number), stem.lower())
+
 
 def images_in(album_dir):
-    """Every usable image in an album folder, in filename order."""
+    """Every usable image in an album folder, in the order the gallery shows them."""
     return sorted(
         (p for p in album_dir.iterdir() if p.suffix.lower() in SUFFIXES and not p.name.startswith('.')),
-        key=lambda p: p.name.lower(),
+        key=lambda p: photo_order(p.name),
     )
 
 
@@ -58,18 +74,18 @@ def blank_localized():
 
 def load_album_json(album_dir, files):
     """
-    Read album.json, creating it when missing. Photos found on disk but not
-    listed yet are appended with empty captions, and entries whose file is
-    gone are dropped, so the file tracks the folder without losing captions
-    that have already been written.
+    Read album.json, creating it when missing. The photo list is rewritten from
+    what is on disk, in filename order, so renaming a photo reorders the album;
+    captions already written are carried across by filename, and an entry whose
+    file is gone drops out.
     """
     path = album_dir / 'album.json'
     album = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
 
     listed = {entry['file']: entry for entry in album.get('photos', [])}
-    names = [p.name for p in files]
-    photos = [listed[name] for name in (e['file'] for e in album.get('photos', [])) if name in names]
-    photos += [{'file': name, 'caption': blank_localized()} for name in names if name not in listed]
+    photos = [
+        listed.get(p.name) or {'file': p.name, 'caption': blank_localized()} for p in files
+    ]
 
     # Every field the site can use, in a fixed order, so a new album.json opens
     # with the whole form to fill in rather than half of it.

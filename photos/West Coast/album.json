@@ -1,0 +1,113 @@
+{
+  "place": {
+    "en": "West Coast, Auckland",
+    "zh": "奥克兰 西海岸"
+  },
+  "city": {
+    "en": "West Coast",
+    "zh": "西海岸"
+  },
+  "region": {
+    "en": "Auckland",
+    "zh": "奥克兰"
+  },
+  "date": {
+    "en": "2024 – 2025",
+    "zh": "2024 – 2025 年"
+  },
+  "camera": "Canon EOS 800D",
+  "cover": "03-Mercer Bay.jpg",
+  "photos": [
+    {
+      "file": "01-Mercer Bay.jpg",
+      "caption": {
+        "en": "Mercer Bay",
+        "zh": "Mercer Bay"
+      }
+    },
+    {
+      "file": "02-Mercer Bay.jpg",
+      "caption": {
+        "en": "Mercer Bay",
+        "zh": "Mercer Bay"
+      }
+    },
+    {
+      "file": "03-Mercer Bay.jpg",
+      "caption": {
+        "en": "Mercer Bay",
+        "zh": "Mercer Bay"
+      }
+    },
+    {
+      "file": "01-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "02-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "03-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "04-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "05-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "06-Omanawanui.jpg",
+      "caption": {
+        "en": "Omanawanui",
+        "zh": "Omanawanui"
+      }
+    },
+    {
+      "file": "01-Tawharanui Regional Park.jpg",
+      "caption": {
+        "en": "Tawharanui Regional Park",
+        "zh": "Tawharanui Regional Park"
+      }
+    },
+    {
+      "file": "02-Tawharanui Regional Park.jpg",
+      "caption": {
+        "en": "Tawharanui Regional Park",
+        "zh": "Tawharanui Regional Park"
+      }
+    },
+    {
+      "file": "03-Tawharanui Regional Park.jpg",
+      "caption": {
+        "en": "Tawharanui Regional Park",
+        "zh": "Tawharanui Regional Park"
+      }
+    },
+    {
+      "file": "04-Tawharanui Regional Park.jpg",
+      "caption": {
+        "en": "Tawharanui Regional Park",
+        "zh": "Tawharanui Regional Park"
+      }
+    }
+  ]
+}

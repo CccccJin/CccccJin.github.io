@@ -1,0 +1,50 @@
+{
+  "place": {
+    "en": "Christchurch, Canterbury",
+    "zh": "坎特伯雷 基督城"
+  },
+  "city": {
+    "en": "Christchurch",
+    "zh": "基督城"
+  },
+  "region": {
+    "en": "Canterbury",
+    "zh": "坎特伯雷"
+  },
+  "date": {
+    "en": "September 2024",
+    "zh": "2024 年 9 月"
+  },
+  "camera": "Canon EOS 800D",
+  "cover": "04-Chrischurch.jpg",
+  "photos": [
+    {
+      "file": "01-Chrischurch.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "02-Chrischurch.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "03-Chrischurch.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "file": "04-Chrischurch.jpg",
+      "caption": {
+        "en": "",
+        "zh": ""
+      }
+    }
+  ]
+}

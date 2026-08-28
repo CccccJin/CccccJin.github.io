@@ -1,5 +1,211 @@
 [
   {
+    "id": "West Coast",
+    "place": {
+      "en": "West Coast, Auckland",
+      "zh": "奥克兰 西海岸"
+    },
+    "city": {
+      "en": "West Coast",
+      "zh": "西海岸"
+    },
+    "region": {
+      "en": "Auckland",
+      "zh": "奥克兰"
+    },
+    "date": {
+      "en": "2024 – 2025",
+      "zh": "2024 – 2025 年"
+    },
+    "camera": "Canon EOS 800D",
+    "cover": "03-Mercer Bay.jpg",
+    "photos": [
+      {
+        "src": "./gallery/West Coast/01-Mercer Bay.jpg",
+        "thumb": "./gallery/West Coast/thumbs/01-Mercer Bay.jpg",
+        "width": 1125,
+        "height": 1500,
+        "caption": {
+          "en": "Mercer Bay",
+          "zh": "Mercer Bay"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/02-Mercer Bay.jpg",
+        "thumb": "./gallery/West Coast/thumbs/02-Mercer Bay.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Mercer Bay",
+          "zh": "Mercer Bay"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/03-Mercer Bay.jpg",
+        "thumb": "./gallery/West Coast/thumbs/03-Mercer Bay.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Mercer Bay",
+          "zh": "Mercer Bay"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/01-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/01-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/02-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/02-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/03-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/03-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/04-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/04-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/05-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/05-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/06-Omanawanui.jpg",
+        "thumb": "./gallery/West Coast/thumbs/06-Omanawanui.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "Omanawanui",
+          "zh": "Omanawanui"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/01-Tawharanui Regional Park.jpg",
+        "thumb": "./gallery/West Coast/thumbs/01-Tawharanui Regional Park.jpg",
+        "width": 1500,
+        "height": 844,
+        "caption": {
+          "en": "Tawharanui Regional Park",
+          "zh": "Tawharanui Regional Park"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/02-Tawharanui Regional Park.jpg",
+        "thumb": "./gallery/West Coast/thumbs/02-Tawharanui Regional Park.jpg",
+        "width": 1500,
+        "height": 938,
+        "caption": {
+          "en": "Tawharanui Regional Park",
+          "zh": "Tawharanui Regional Park"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/03-Tawharanui Regional Park.jpg",
+        "thumb": "./gallery/West Coast/thumbs/03-Tawharanui Regional Park.jpg",
+        "width": 1500,
+        "height": 937,
+        "caption": {
+          "en": "Tawharanui Regional Park",
+          "zh": "Tawharanui Regional Park"
+        }
+      },
+      {
+        "src": "./gallery/West Coast/04-Tawharanui Regional Park.jpg",
+        "thumb": "./gallery/West Coast/thumbs/04-Tawharanui Regional Park.jpg",
+        "width": 1500,
+        "height": 938,
+        "caption": {
+          "en": "Tawharanui Regional Park",
+          "zh": "Tawharanui Regional Park"
+        }
+      }
+    ]
+  },
+  {
+    "id": "Shakespear Park",
+    "place": {
+      "en": "Shakespear Park, Auckland",
+      "zh": "奥克兰 Shakespear Park"
+    },
+    "city": {
+      "en": "Shakespear Park",
+      "zh": "Shakespear Park"
+    },
+    "region": {
+      "en": "Auckland",
+      "zh": "奥克兰"
+    },
+    "date": {
+      "en": "September 2024",
+      "zh": "2024 年 9 月"
+    },
+    "camera": "Canon EOS 800D",
+    "cover": "IMG_0156.jpg",
+    "photos": [
+      {
+        "src": "./gallery/Shakespear Park/IMG_0156.jpg",
+        "thumb": "./gallery/Shakespear Park/thumbs/IMG_0156.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Shakespear Park/IMG_0161.jpg",
+        "thumb": "./gallery/Shakespear Park/thumbs/IMG_0161.jpg",
+        "width": 1500,
+        "height": 1000,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      },
+      {
+        "src": "./gallery/Shakespear Park/IMG_0183.jpg",
+        "thumb": "./gallery/Shakespear Park/thumbs/IMG_0183.jpg",
+        "width": 1000,
+        "height": 1500,
+        "caption": {
+          "en": "",
+          "zh": ""
+        }
+      }
+    ]
+  },
+  {
     "id": "Rangitoto",
     "place": {
       "en": "Rangitoto, Auckland",
@@ -166,91 +372,61 @@
     ]
   },
   {
-    "id": "omanawanui",
+    "id": "Chrischurch",
     "place": {
-      "en": "Omanawanui, Auckland",
-      "zh": "奥克兰 Omanawanui"
+      "en": "Christchurch, Canterbury",
+      "zh": "坎特伯雷 基督城"
     },
     "city": {
-      "en": "Omanawanui",
-      "zh": "Omanawanui"
+      "en": "Christchurch",
+      "zh": "基督城"
     },
     "region": {
-      "en": "Auckland",
-      "zh": "奥克兰"
+      "en": "Canterbury",
+      "zh": "坎特伯雷"
     },
     "date": {
-      "en": "October 2025",
-      "zh": "2025 年 10 月"
+      "en": "September 2024",
+      "zh": "2024 年 9 月"
     },
     "camera": "Canon EOS 800D",
-    "cover": "04-black-sand-from-ridge.jpg",
+    "cover": "04-Chrischurch.jpg",
     "photos": [
       {
-        "src": "./gallery/omanawanui/01-road-west.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/01-road-west.jpg",
+        "src": "./gallery/Chrischurch/01-Chrischurch.jpg",
+        "thumb": "./gallery/Chrischurch/thumbs/01-Chrischurch.jpg",
         "width": 1500,
-        "height": 1000,
+        "height": 844,
         "caption": {
           "en": "",
           "zh": ""
         }
       },
       {
-        "src": "./gallery/omanawanui/02-sheltered-water.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/02-sheltered-water.jpg",
-        "width": 1500,
-        "height": 1000,
+        "src": "./gallery/Chrischurch/02-Chrischurch.jpg",
+        "thumb": "./gallery/Chrischurch/thumbs/02-Chrischurch.jpg",
+        "width": 1125,
+        "height": 1500,
         "caption": {
           "en": "",
           "zh": ""
         }
       },
       {
-        "src": "./gallery/omanawanui/03-tree-over-bay.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/03-tree-over-bay.jpg",
+        "src": "./gallery/Chrischurch/03-Chrischurch.jpg",
+        "thumb": "./gallery/Chrischurch/thumbs/03-Chrischurch.jpg",
         "width": 1500,
-        "height": 1000,
+        "height": 844,
         "caption": {
           "en": "",
           "zh": ""
         }
       },
       {
-        "src": "./gallery/omanawanui/04-black-sand-from-ridge.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/04-black-sand-from-ridge.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/omanawanui/05-beach-below-lookout.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/05-beach-below-lookout.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/omanawanui/06-rock-at-beach-end.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/06-rock-at-beach-end.jpg",
-        "width": 1500,
-        "height": 1000,
-        "caption": {
-          "en": "",
-          "zh": ""
-        }
-      },
-      {
-        "src": "./gallery/omanawanui/07-flax-in-the-wind.jpg",
-        "thumb": "./gallery/omanawanui/thumbs/07-flax-in-the-wind.jpg",
-        "width": 1500,
-        "height": 1000,
+        "src": "./gallery/Chrischurch/04-Chrischurch.jpg",
+        "thumb": "./gallery/Chrischurch/thumbs/04-Chrischurch.jpg",
+        "width": 1000,
+        "height": 1500,
         "caption": {
           "en": "",
           "zh": ""
