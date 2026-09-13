@@ -21,6 +21,7 @@ function BioEnglish() {
         validating YOLOv8 pipelines for intelligent transport systems, and at Cloudcell building a
         similarity-search platform over millions of ChEMBL compounds.
       </p>
+      {/* Temporarily hidden: pre-New Zealand field service experience.
       <p>
         Before moving to New Zealand, I spent five years as a field service engineer at{' '}
         <a href="https://www.axcelis.com/" target="_blank" rel="noreferrer">
@@ -33,6 +34,7 @@ function BioEnglish() {
         , diagnosing semiconductor and FPD lithography equipment — log analysis, waveform and
         Fourier diagnostics, and filter calibration on machines that are not allowed to fail.
       </p>
+      */}
       <p>
         <strong>Goal:</strong> robots and AI systems that keep working outside the demo.
       </p>
@@ -67,6 +69,7 @@ function BioChinese() {
         实习,参与智能交通场景下 YOLOv8 视觉管线的验证;也在 Cloudcell
         参与搭建了一个覆盖数百万 ChEMBL 化合物的药物相似性检索平台。
       </p>
+      {/* Temporarily hidden: pre-New Zealand field service experience.
       <p>
         来新西兰之前,我在{' '}
         <a href="https://www.axcelis.com/" target="_blank" rel="noreferrer">
@@ -79,6 +82,7 @@ function BioChinese() {
         做了五年现场服务工程师,与半导体和面板光刻设备打交道:日志分析、波形与傅里叶诊断、
         滤波器标定。这段经历让我明白,真实环境里的系统远比实验室里的复杂。
       </p>
+      */}
       <p>
         <strong>目标:</strong>希望做出走出演示环境之后,依然能稳定工作的机器人与 AI 系统。
       </p>
