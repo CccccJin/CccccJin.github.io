@@ -142,10 +142,10 @@ export const allProjects: Project[] = [
     thumb: 'ChEMBL · RDKit',
     hue: 158,
     cover: {
-      src: './covers/affordable.jpg',
+      src: './covers/affordable-974d51b.png',
       alt: {
-        en: 'ChemSearch landing page: search millions of compounds by SMILES string or compound name',
-        zh: 'ChemSearch 首页:支持按 SMILES 字符串或化合物名称检索数百万化合物',
+        en: 'ChemSearch landing page with a pearl-and-teal 3D capsule, the POSSIBIlITY headline, and intro controls in the top-right header',
+        zh: 'ChemSearch 新版首页:珍珠白与青绿色三维胶囊、POSSIBILITY 标题,以及顶栏右上角的动画和跳过按钮',
       },
     },
     tagline: {
