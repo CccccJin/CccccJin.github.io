@@ -142,10 +142,10 @@ export const allProjects: Project[] = [
     thumb: 'ChEMBL · RDKit',
     hue: 158,
     cover: {
-      src: './covers/affordable-974d51b.png',
+      src: './covers/affordable-fc565db.png',
       alt: {
-        en: 'ChemSearch landing page with a pearl-and-teal 3D capsule, the POSSIBIlITY headline, and intro controls in the top-right header',
-        zh: 'ChemSearch 新版首页:珍珠白与青绿色三维胶囊、POSSIBILITY 标题,以及顶栏右上角的动画和跳过按钮',
+        en: 'ChemSearch landing page with a pearl-and-teal 3D capsule and navigation seamlessly integrated into the same gradient background',
+        zh: 'ChemSearch 新版首页:珍珠白与青绿色三维胶囊,顶部导航与胶囊区域共享连续的渐变背景',
       },
     },
     tagline: {
